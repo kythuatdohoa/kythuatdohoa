@@ -11,8 +11,6 @@ import Element.NhapToaDo3D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
 
@@ -32,6 +30,7 @@ public class Hinh3D extends javax.swing.JFrame {
         NhapToaDo.setToolTipText("Nhập kích thước !");
         HHCN.setToolTipText("Vẽ hình hộp chữ nhật !");
         CHOP.setToolTipText("Vẽ hình chóp tam giác !");
+        TRU.setToolTipText("Vẽ hình trụ !");
         infor.setToolTipText("Hiển thị kích thước, toạ độ !");
         CLEAR.setToolTipText("Xoá !");
     }
@@ -47,7 +46,7 @@ public class Hinh3D extends javax.swing.JFrame {
         color = new javax.swing.JButton();
         infor = new javax.swing.JButton();
         NhapToaDo = new javax.swing.JButton();
-        CHOP1 = new javax.swing.JButton();
+        TRU = new javax.swing.JButton();
         CLEAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,10 +101,10 @@ public class Hinh3D extends javax.swing.JFrame {
             }
         });
 
-        CHOP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Cylinder3.png"))); // NOI18N
-        CHOP1.addActionListener(new java.awt.event.ActionListener() {
+        TRU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Cylinder3.png"))); // NOI18N
+        TRU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CHOP1ActionPerformed(evt);
+                TRUActionPerformed(evt);
             }
         });
 
@@ -130,7 +129,7 @@ public class Hinh3D extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(CHOP1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TRU, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -149,7 +148,7 @@ public class Hinh3D extends javax.swing.JFrame {
                     .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NhapToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CHOP1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TRU, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ToaDo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -370,6 +369,71 @@ public class Hinh3D extends javax.swing.JFrame {
         }
     }
 
+    public void NetDut_Midpoint_elip(Elip T) {
+        int x, y, pointx, pointy, R, r;
+        int count=-1;
+        pointx = T.point.x;
+        pointy = T.point.y;
+        R = T.R;
+        r = T.r;
+        Color m = T.mau;
+        x = 0;
+        y = r;
+        int A, B;
+        A = R * R;
+        B = r * r;
+        double p = B + A / 4 - A * r;
+        x = 0;
+        y = r;
+        int Dx = 0;
+        int Dy = 2 * A * y;
+        put4pitxel(x, y, pointx, pointy, m);
+
+        while (Dx < Dy) {
+            x++;
+            Dx += 2 * B;
+            if (p < 0) {
+                p += B + Dx;
+            } else {
+                y--;
+                Dy -= 2 * A;
+                p += B + Dx - Dy;
+            }
+            if (x % 5 == 0) {
+                putpixel(x + pointx, doitoado.round(y) + pointy, T.mau);
+                putpixel(-x + pointx, doitoado.round(y) + pointy, T.mau);
+                
+                
+                putpixel(x + pointx, -doitoado.round(y) + pointy, m);
+                putpixel(-x + pointx, -doitoado.round(y) + pointy, m);
+                
+            }
+            if(count < 4){
+                m = T.mau;
+            }else{
+                m = Color.WHITE;
+            }
+            if(count % 10 == 0 && count!=0){
+                count = -1;
+            }
+            count++;
+        }
+        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A * B);
+        while (y > 0) {
+            y--;
+            Dy -= A * 2;
+            if (p > 0) {
+                p += A - Dy;
+            } else {
+                x++;
+                Dx += B * 2;
+                p += A - Dy + Dx;
+            }
+            if (x % 5 == 0) {
+                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
+            }
+        }
+    }
     //======o0o==BUTTON==o0o=========//
     //Chọn màu
     private void colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorActionPerformed
@@ -425,8 +489,8 @@ public class Hinh3D extends javax.swing.JFrame {
         repaint();
     }//GEN-LAST:event_CLEARActionPerformed
 
-    //hình nón
-    private void CHOP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHOP1ActionPerformed
+    //hình trụ
+    private void TRUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRUActionPerformed
         heToaDo();
         NetDut_DDA(DrawCylinder.dt1);
         NetDut_DDA(DrawCylinder.dt2);
@@ -434,8 +498,8 @@ public class Hinh3D extends javax.swing.JFrame {
         NetDut_DDA(DrawCylinder.dt4);
         line_DDA(DrawCylinder.dt5);
         Midpoint_elip(DrawCylinder.elip1);
-        Midpoint_elip(DrawCylinder.elip2);
-    }//GEN-LAST:event_CHOP1ActionPerformed
+        NetDut_Midpoint_elip(DrawCylinder.elip2);
+    }//GEN-LAST:event_TRUActionPerformed
 
     //========================================================================//
     public static void main(String args[]) {
@@ -472,10 +536,10 @@ public class Hinh3D extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CHOP;
-    private javax.swing.JButton CHOP1;
     private javax.swing.JButton CLEAR;
     private javax.swing.JButton HHCN;
     private javax.swing.JButton NhapToaDo;
+    private javax.swing.JButton TRU;
     private javax.swing.JPanel ToaDo;
     private javax.swing.JButton color;
     private javax.swing.JButton infor;

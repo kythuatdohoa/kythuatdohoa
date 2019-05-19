@@ -53,7 +53,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="CHOP" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="CHOP1" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="TRU" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="infor" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -75,7 +75,7 @@
                       <Component id="infor" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="NhapToaDo" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="CHOP" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="CHOP1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="TRU" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="CLEAR" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -157,14 +157,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NhapToaDoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="CHOP1">
+        <Component class="javax.swing.JButton" name="TRU">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Img/Cylinder3.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CHOP1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TRUActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CLEAR">
