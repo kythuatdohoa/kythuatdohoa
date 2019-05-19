@@ -11,6 +11,8 @@ import Element.NhapToaDo3D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
 
@@ -101,7 +103,7 @@ public class Hinh3D extends javax.swing.JFrame {
             }
         });
 
-        TRU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Cylinder3.png"))); // NOI18N
+        TRU.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Cylinder5.png"))); // NOI18N
         TRU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TRUActionPerformed(evt);
@@ -200,19 +202,6 @@ public class Hinh3D extends javax.swing.JFrame {
         graphic.drawLine(ToaDo.getWidth() / 2, ToaDo.getHeight() / 2, 146, 570);
         graphic.drawString("Y", 146 - 10, 570 - 10);
     }
-    //=== putcolor ===//
-//    public void putcolor(int x,int y, Color m)
-//        {
-//            if (x < 0 || x > 830 || y < 0 || y > 570) return;
-//            arrcolor[doitoado.round(x)/5][doitoado.round(y)/5]= m;
-//        }
-//    public void putcolor1(int x, int y, int cx, int cy, Color m){
-//            putcolor(x + cx, y + cy, m);
-//            putcolor(-x + cx, y + cy, m);
-//            putcolor(x + cx, -y + cy, m);
-//            putcolor(-x + cx, -y + cy, m);
-//    }
-
     //=== vẽ đường thẳng ===//
     public void putpixel(int x, int y, Color color) {
         double a = 2.5;
@@ -283,19 +272,21 @@ public class Hinh3D extends javax.swing.JFrame {
             delta_Y /= count;
             x = T.diemdau.x;
             y = T.diemdau.y;
-            do {
-
+            do { 
                 if (dem < 7) {
                     m = T.mau;
                 } else {
                     m = Color.WHITE;
                 }
-                if (dem % 10 == 0) {
+                if (dem % 10 == 0 && dem!=0) {
                     dem = 0;
                 }
+                
                 temp_1 = doitoado.round(x);
                 temp_2 = doitoado.round(y);
                 putpixel(temp_1, temp_2, m);
+                m = T.mau;
+                
                 x += delta_X;
                 y += delta_Y;
                 count--;
@@ -450,33 +441,182 @@ public class Hinh3D extends javax.swing.JFrame {
     //vẽ hình hộp
     private void HHCNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCNActionPerformed
         heToaDo();
+        putpixel(DrawCube.point1.x, DrawCube.point1.y, choosecolor);
+        putpixel(DrawCube.point2.x, DrawCube.point2.y, choosecolor);
+        putpixel(DrawCube.point3.x, DrawCube.point3.y, choosecolor);
+        putpixel(DrawCube.point4.x, DrawCube.point4.y, choosecolor);
+        putpixel(DrawCube.point5.x, DrawCube.point5.y, choosecolor);
+        putpixel(DrawCube.point6.x, DrawCube.point6.y, choosecolor);
+        putpixel(DrawCube.point7.x, DrawCube.point7.y, choosecolor);
+        putpixel(DrawCube.point8.x, DrawCube.point8.y, choosecolor);
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 1
         NetDut_DDA(DrawCube.dt1);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 2
         line_DDA(DrawCube.dt2);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 3
         line_DDA(DrawCube.dt3);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 4
         NetDut_DDA(DrawCube.dt4);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 5
         line_DDA(DrawCube.dt5);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 6
         NetDut_DDA(DrawCube.dt6);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 7
         line_DDA(DrawCube.dt7);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 8
         line_DDA(DrawCube.dt8);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 9
         line_DDA(DrawCube.dt9);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 10
         line_DDA(DrawCube.dt10);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 11
         line_DDA(DrawCube.dt11);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
         line_DDA(DrawCube.dt12);
     }//GEN-LAST:event_HHCNActionPerformed
 
     //vẽ hình chóp
     private void CHOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHOPActionPerformed
         heToaDo();
+        putpixel(DrawPyramid.point1.x, DrawPyramid.point1.y, choosecolor);
+        putpixel(DrawPyramid.point2.x, DrawPyramid.point2.y, choosecolor);
+        putpixel(DrawPyramid.point3.x, DrawPyramid.point3.y, choosecolor);
+        putpixel(DrawPyramid.point4.x, DrawPyramid.point4.y, choosecolor);
+        putpixel(DrawPyramid.point5.x, DrawPyramid.point5.y, choosecolor);
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 1
         NetDut_DDA(DrawPyramid.dt1);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 2
         line_DDA(DrawPyramid.dt2);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 3
         line_DDA(DrawPyramid.dt3);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 4
         NetDut_DDA(DrawPyramid.dt4);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 5
         NetDut_DDA(DrawPyramid.dt5);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 6
         line_DDA(DrawPyramid.dt6);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 7
         line_DDA(DrawPyramid.dt7);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 8
         line_DDA(DrawPyramid.dt8);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 9
         NetDut_DDA(DrawPyramid.dt9);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 10
         NetDut_DDA(DrawPyramid.dt10);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_CHOPActionPerformed
 
     //thông tin
@@ -492,12 +632,60 @@ public class Hinh3D extends javax.swing.JFrame {
     //hình trụ
     private void TRUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRUActionPerformed
         heToaDo();
+        putpixel(DrawCylinder.point1.x, DrawCylinder.point1.y, choosecolor);
+        putpixel(DrawCylinder.point2.x, DrawCylinder.point2.y, choosecolor);
+        putpixel(DrawCylinder.point3.x, DrawCylinder.point3.y, choosecolor);
+        putpixel(DrawCylinder.point4.x, DrawCylinder.point4.y, choosecolor);
+        putpixel(DrawCylinder.point5.x, DrawCylinder.point5.y, choosecolor);
+        putpixel(DrawCylinder.point6.x, DrawCylinder.point6.y, choosecolor);
+        try {
+            Thread.sleep(600);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 1
         NetDut_DDA(DrawCylinder.dt1);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 2
         NetDut_DDA(DrawCylinder.dt2);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 3
         line_DDA(DrawCylinder.dt3);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 4
         NetDut_DDA(DrawCylinder.dt4);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //dương thẳng 5
         line_DDA(DrawCylinder.dt5);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //elip 1
         Midpoint_elip(DrawCylinder.elip1);
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //elip 2
         NetDut_Midpoint_elip(DrawCylinder.elip2);
     }//GEN-LAST:event_TRUActionPerformed
 
