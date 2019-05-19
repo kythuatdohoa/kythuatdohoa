@@ -1,8 +1,7 @@
-
 package ktdh;
 
 import Element.DoiToaDo;
-import Element.DrawCone;
+import Element.DrawCylinder;
 import Element.DrawCube;
 import Element.DrawPyramid;
 import Element.Dthang;
@@ -12,6 +11,8 @@ import Element.NhapToaDo3D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
 
@@ -19,7 +20,6 @@ import javax.swing.JColorChooser;
  *
  * @author NHOM8
  */
-
 public class Hinh3D extends javax.swing.JFrame {
 
     public Hinh3D() {
@@ -27,13 +27,13 @@ public class Hinh3D extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("VẼ HÌNH 3D");
         this.setIconImage(new ImageIcon("E:\\JAVA\\KTDH\\KTDH\\src\\Img\\draw.png").getImage());
-        
+
         color.setToolTipText("Chọn màu để vẽ !");
         NhapToaDo.setToolTipText("Nhập kích thước !");
-        HHCN.setToolTipText("Vẽ hình hộp chữ nhật !"); 
+        HHCN.setToolTipText("Vẽ hình hộp chữ nhật !");
         CHOP.setToolTipText("Vẽ hình chóp tam giác !");
         infor.setToolTipText("Hiển thị kích thước, toạ độ !");
-        CLEAR.setToolTipText("Xoá !");   
+        CLEAR.setToolTipText("Xoá !");
     }
 
     @SuppressWarnings("unchecked")
@@ -74,11 +74,11 @@ public class Hinh3D extends javax.swing.JFrame {
         ToaDo.setLayout(ToaDoLayout);
         ToaDoLayout.setHorizontalGroup(
             ToaDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 833, Short.MAX_VALUE)
+            .addGap(0, 828, Short.MAX_VALUE)
         );
         ToaDoLayout.setVerticalGroup(
             ToaDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 724, Short.MAX_VALUE)
+            .addGap(0, 598, Short.MAX_VALUE)
         );
 
         color.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/color.png"))); // NOI18N
@@ -102,7 +102,7 @@ public class Hinh3D extends javax.swing.JFrame {
             }
         });
 
-        CHOP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cone2.png"))); // NOI18N
+        CHOP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Cylinder3.png"))); // NOI18N
         CHOP1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CHOP1ActionPerformed(evt);
@@ -136,7 +136,9 @@ public class Hinh3D extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(ToaDo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,8 +151,8 @@ public class Hinh3D extends javax.swing.JFrame {
                     .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CHOP1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ToaDo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,38 +169,37 @@ public class Hinh3D extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
     //============================================================================//
     //======o0o==KHAI BÁO==o0o=========//
-    public Color  choosecolor;
+    public Color choosecolor;
     DoiToaDo doitoado = new DoiToaDo();
     Color[][] arrcolor = new Color[165][115];
+
     //======o0o==HÀM CON==o0o=========//
-    public void heToaDo(){
+    public void heToaDo() {
         Graphics2D graphic = (Graphics2D) ToaDo.getGraphics();
-        
+
         //đứng
         graphic.setColor(Color.blue);
-        for(int i=0; i<=ToaDo.getWidth()/5; i++){
-            graphic.drawLine(5* i, 0, 5* i, ToaDo.getHeight());
+        for (int i = 0; i <= ToaDo.getWidth() / 5; i++) {
+            graphic.drawLine(5 * i, 0, 5 * i, ToaDo.getHeight());
         }
-        
-        //ngang
-        for(int j=0; j<=ToaDo.getHeight()/5; j++){
-            graphic.drawLine(0, 5* j,ToaDo.getWidth(), 5* j);
-        }
-        
-        //Trục toạ độ
-        
-        graphic.setColor(Color.RED);
-        graphic.drawLine(ToaDo.getWidth()/2, 0, ToaDo.getWidth()/2, ToaDo.getHeight()/2);
-        graphic.drawString("Z", ToaDo.getWidth()/2-10, 10);
-        
-        graphic.drawLine(ToaDo.getWidth(), ToaDo.getHeight()/2, ToaDo.getWidth()/2, ToaDo.getHeight()/2);
-        graphic.drawString("X", ToaDo.getWidth()-10, ToaDo.getHeight()/2-10);
 
-        graphic.drawLine(ToaDo.getWidth()/2, ToaDo.getHeight()/2, 146, 570); 
-        graphic.drawString("Y", 146 - 10, 570 - 10);    
+        //ngang
+        for (int j = 0; j <= ToaDo.getHeight() / 5; j++) {
+            graphic.drawLine(0, 5 * j, ToaDo.getWidth(), 5 * j);
+        }
+
+        //Trục toạ độ
+        graphic.setColor(Color.RED);
+        graphic.drawLine(ToaDo.getWidth() / 2, 0, ToaDo.getWidth() / 2, ToaDo.getHeight() / 2);
+        graphic.drawString("Z", ToaDo.getWidth() / 2 - 10, 10);
+
+        graphic.drawLine(ToaDo.getWidth(), ToaDo.getHeight() / 2, ToaDo.getWidth() / 2, ToaDo.getHeight() / 2);
+        graphic.drawString("X", ToaDo.getWidth() - 10, ToaDo.getHeight() / 2 - 10);
+
+        graphic.drawLine(ToaDo.getWidth() / 2, ToaDo.getHeight() / 2, 146, 570);
+        graphic.drawString("Y", 146 - 10, 570 - 10);
     }
     //=== putcolor ===//
 //    public void putcolor(int x,int y, Color m)
@@ -212,12 +213,14 @@ public class Hinh3D extends javax.swing.JFrame {
 //            putcolor(x + cx, -y + cy, m);
 //            putcolor(-x + cx, -y + cy, m);
 //    }
-    
+
     //=== vẽ đường thẳng ===//
-    public void putpixel(int x,int y, Color color){
-        double a=2.5;
-        if (x < 0 || x > 830 || y < 0 || y > 600) return;
-        
+    public void putpixel(int x, int y, Color color) {
+        double a = 2.5;
+        if (x < 0 || x > 830 || y < 0 || y > 600) {
+            return;
+        }
+
         Graphics2D graphic = (Graphics2D) ToaDo.getGraphics();
 
         graphic.setPaint(color);
@@ -227,29 +230,32 @@ public class Hinh3D extends javax.swing.JFrame {
         graphic.fill(new Ellipse2D.Double(x - a, y - a, a, a));
 
         graphic.setPaint(color);
-        graphic.fill(new Ellipse2D.Double( x , y - a, a, a));
-          
+        graphic.fill(new Ellipse2D.Double(x, y - a, a, a));
+
         graphic.setPaint(color);
-        graphic.fill(new Ellipse2D.Double( x - a, y, a, a));
+        graphic.fill(new Ellipse2D.Double(x - a, y, a, a));
 
     }
-    
-    public void line_DDA(Dthang T){ // Ve duong thang co dinh dang mau
+
+    public void line_DDA(Dthang T) { // Ve duong thang co dinh dang mau
         Color m = T.mau;
         int Dx, Dy, count, temp_1, temp_2;
         Dx = T.diemcuoi.x - T.diemdau.x;
         Dy = T.diemcuoi.y - T.diemdau.y;
-        if (Math.abs(Dy) > Math.abs(Dx)) count = Math.abs(Dy);
-        else count = Math.abs(Dx);
+        if (Math.abs(Dy) > Math.abs(Dx)) {
+            count = Math.abs(Dy);
+        } else {
+            count = Math.abs(Dx);
+        }
         float x, y, delta_X, delta_Y;
-        if (count > 0){
+        if (count > 0) {
             delta_X = Dx;
             delta_X /= count;
             delta_Y = Dy;
             delta_Y /= count;
-            x =T.diemdau.x;
+            x = T.diemdau.x;
             y = T.diemdau.y;
-            do{
+            do {
                 temp_1 = doitoado.round(x);
                 temp_2 = doitoado.round(y);
                 putpixel(temp_1, temp_2, m);
@@ -258,29 +264,32 @@ public class Hinh3D extends javax.swing.JFrame {
                 count--;
             } while (count != -1);
         }
-    } 
-    
-    public void NetDut_DDA(Dthang T){ // Ve duong thang co dinh dang mau
-        Color m=T.mau;
+    }
+
+    public void NetDut_DDA(Dthang T) { // Ve duong thang co dinh dang mau
+        Color m = T.mau;
         int Dx, Dy, count, temp_1, temp_2, dem = 0;
         Dx = T.diemcuoi.x - T.diemdau.x;
         Dy = T.diemcuoi.y - T.diemdau.y;
-        if (Math.abs(Dy) > Math.abs(Dx)) count = Math.abs(Dy);
-        else count = Math.abs(Dx);
+        if (Math.abs(Dy) > Math.abs(Dx)) {
+            count = Math.abs(Dy);
+        } else {
+            count = Math.abs(Dx);
+        }
         float x, y, delta_X, delta_Y;
-        if (count > 0){
+        if (count > 0) {
             delta_X = Dx;
             delta_X /= count;
             delta_Y = Dy;
             delta_Y /= count;
-            x =T.diemdau.x;
+            x = T.diemdau.x;
             y = T.diemdau.y;
-            do{
-                
+            do {
+
                 if (dem < 7) {
-                    m=T.mau;
+                    m = T.mau;
                 } else {
-                    m=Color.WHITE;
+                    m = Color.WHITE;
                 }
                 if (dem % 10 == 0) {
                     dem = 0;
@@ -294,23 +303,32 @@ public class Hinh3D extends javax.swing.JFrame {
                 dem++;
             } while (count != -1);
         }
-    } 
-    
-    //===vẽ eclip ===//
-    public void put4pitxel(int x, int y, int pointx, int pointy, Color m){
-        putpixel(x+pointx, y+pointy,m);
-        putpixel(-x + pointx, y + pointy, m);
-        putpixel(x+pointx, -y+pointy, m);
-        putpixel(-x+pointx, -y+pointy, m);
     }
-    
-    public void Midpoint_elip(Elip T){
+
+    //===vẽ eclip ===//
+    public void put4pitxel(int x, int y, int pointx, int pointy, Color m) {
+        //put dưới
+            //nửa phải
+        putpixel(x + pointx, y + pointy, m);
+            //nửa trái
+        putpixel(-x + pointx, y + pointy, m);
+        
+        //put trên
+            //nửa phải
+        putpixel(x + pointx, -y + pointy, m);
+            //nửa trái
+        putpixel(-x + pointx, -y + pointy, m);
+    }
+
+    public void Midpoint_elip(Elip T) {
         int x, y, pointx, pointy, R, r;
-        pointx = T.point.x; 
-        pointy= T.point.y;
-        R = T.R; r = T.r;
+        pointx = T.point.x;
+        pointy = T.point.y;
+        R = T.R;
+        r = T.r;
         Color m = T.mau;
-        x = 0; y = r;
+        x = 0;
+        y = r;
         int A, B;
         A = R * R;
         B = r * r;
@@ -320,40 +338,43 @@ public class Hinh3D extends javax.swing.JFrame {
         int Dx = 0;
         int Dy = 2 * A * y;
         put4pitxel(x, y, pointx, pointy, m);
-          
-        while (Dx < Dy){
+
+        while (Dx < Dy) {
             x++;
             Dx += 2 * B;
-            if (p < 0)
+            if (p < 0) {
                 p += B + Dx;
-            else{
+            } else {
                 y--;
-                Dy -= 2 *A;
-                p += B+ Dx - Dy;
+                Dy -= 2 * A;
+                p += B + Dx - Dy;
             }
-            //putcolor1(doitoado.round(x), doitoado.round(y), pointx, pointy, m);
-            if(x%5==0) put4pitxel(x,doitoado.round( y), pointx, pointy, m);
+            if (x % 5 == 0) {
+                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
+            }
         }
-        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A* B);
-        while (y > 0){
+        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A * B);
+        while (y > 0) {
             y--;
             Dy -= A * 2;
-            if (p > 0)
-                p += A- Dy;
-            else{
+            if (p > 0) {
+                p += A - Dy;
+            } else {
                 x++;
                 Dx += B * 2;
-                p +=A - Dy + Dx;
+                p += A - Dy + Dx;
             }
-            //putcolor1(doitoado.round(x), doitoado.round(y), pointx, pointy, m);
-            if(x%5==0)  put4pitxel(x,doitoado.round(y), pointx, pointy, m);
+            if (x % 5 == 0) {
+                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
+            }
         }
     }
+
     //======o0o==BUTTON==o0o=========//
     //Chọn màu
     private void colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorActionPerformed
         heToaDo();
-        choosecolor =  JColorChooser.showDialog(this, "Bảng Màu ", Color.GREEN);
+        choosecolor = JColorChooser.showDialog(this, "Bảng Màu ", Color.GREEN);
     }//GEN-LAST:event_colorActionPerformed
 
     //Nhập toạ độ
@@ -377,8 +398,6 @@ public class Hinh3D extends javax.swing.JFrame {
         line_DDA(DrawCube.dt10);
         line_DDA(DrawCube.dt11);
         line_DDA(DrawCube.dt12);
-        
-        //  { for (i = 0; i < elippses.Length; i++) Midpoint_elip(elippses[i]); }
     }//GEN-LAST:event_HHCNActionPerformed
 
     //vẽ hình chóp
@@ -409,22 +428,16 @@ public class Hinh3D extends javax.swing.JFrame {
     //hình nón
     private void CHOP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHOP1ActionPerformed
         heToaDo();
-        NetDut_DDA(DrawCone.dt1);
-        NetDut_DDA(DrawCone.dt2);
-        line_DDA(DrawCone.dt3);
-        line_DDA(DrawCone.dt4);
-        NetDut_DDA(DrawCone.dt5);
-        Midpoint_elip(DrawCone.elip);
+        NetDut_DDA(DrawCylinder.dt1);
+        NetDut_DDA(DrawCylinder.dt2);
+        line_DDA(DrawCylinder.dt3);
+        NetDut_DDA(DrawCylinder.dt4);
+        line_DDA(DrawCylinder.dt5);
+        Midpoint_elip(DrawCylinder.elip1);
+        Midpoint_elip(DrawCylinder.elip2);
     }//GEN-LAST:event_CHOP1ActionPerformed
 
-   
-   //========================================================================//
-    
-    
-    
-    
-    
-    
+    //========================================================================//
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -469,5 +482,4 @@ public class Hinh3D extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-   
 }

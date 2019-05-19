@@ -291,7 +291,7 @@ public class NhapToaDo3D extends JFrame {
                     H = Integer.parseInt(txtH.getText());  
                     new DrawCube(choosecolor, X, Y, Z, L, W, H);
                     new DrawPyramid(choosecolor, X, Y, Z, L, W, H);
-                    new DrawCone(choosecolor, X, Y, Z, L, W, H);
+                    new DrawCylinder(choosecolor, X, Y, Z, L, W, H);
                     dispose();
                 }
             }                               

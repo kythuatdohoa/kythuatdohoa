@@ -43,7 +43,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="color" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -60,7 +60,10 @@
                   <Component id="CLEAR" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="ToaDo" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="ToaDo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -75,8 +78,8 @@
                       <Component id="CHOP1" min="-2" pref="100" max="-2" attributes="0"/>
                       <Component id="CLEAR" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="ToaDo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ToaDo" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,12 +117,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="833" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="828" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="724" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="598" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -157,7 +160,7 @@
         <Component class="javax.swing.JButton" name="CHOP1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Img/cone2.png"/>
+              <Image iconType="3" name="/Img/Cylinder3.png"/>
             </Property>
           </Properties>
           <Events>

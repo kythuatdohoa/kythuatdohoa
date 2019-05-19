@@ -18,35 +18,15 @@ public class DrawCube{
     public  DrawCube(Color choosecolor, int X, int Y, int Z, int L, int W, int H){
 
         //point 
-//        point1 = new Point((int)(X-HESO*Z), (int)(Y - HESO*Z));
-//        point2 = new Point((int)(X + L -HESO*Z), (int)(Y - HESO*Z));
-//        point3 = new Point((int)(X + L -HESO*(Z+W)), (int)(Y - HESO*(Z+W)));
-//        point4 = new Point((int)(X-HESO*(Z+W)), (int)(Y - HESO*(Z+W)));
-//        
-//        point5 = new Point((int)(X-HESO*Z), (int)(Y + H - HESO*Z));
-//        point6 = new Point((int)(X + L -HESO*Z), (int)(Y + H - HESO*Z));
-//        point7 = new Point((int)(X + L -HESO*(Z+W)), (int)(Y + H - HESO*(Z+W)));
-//        point8 = new Point((int)(X-HESO*(Z+W)), (int)(Y + H - HESO*(Z+W)));
-
-//        point1 = new Point((int)(X-HESO*Z), (int)(Y - HESO*Z));
-//        point2 = new Point((int)(X + L -HESO*Z), (int)(Y - HESO*Z));
-//        point3 = new Point((int)(X + L -HESO*(Z)), (int)(Y + W - HESO*(Z)));
-//        point4 = new Point((int)(X-HESO*(Z)), (int)(Y + W - HESO*(Z)));
-//        
-//        point5 = new Point((int)(X-HESO*(Z+H)), (int)(Y - HESO*(Z+H)));
-//        point6 = new Point((int)(X + L -HESO*(Z+H)), (int)(Y - HESO*(Z+H)));
-//        point7 = new Point((int)(X + L -HESO*(Z+H)), (int)(Y +  W  - HESO*(Z+H)));
-//        point8 = new Point((int)(X - HESO*(Z+H)), (int)(Y + W - HESO*(Z+H)));
-
-        point1 = new Point((int)(X-HESO*Y), (int)(Z - HESO*Y));
-        point2 = new Point((int)(X + L -HESO*Y), (int)(Z - HESO*Y));
-        point3 = new Point((int)(X + L -HESO*(Y+W)), (int)(Z - HESO*(Y+W)));
-        point4 = new Point((int)(X-HESO*(Y+W)), (int)(Z - HESO*(Y+W)));
+        point1 = new Point((int)(X - HESO*Z), (int)(Y - HESO*Z));
+        point2 = new Point((int)(X -HESO*Z), (int)(Y + W - HESO*Z));
+        point3 = new Point((int)(X + L - HESO*(Z)), (int)(Y + W - HESO*(Z)));
+        point4 = new Point((int)(X + L - HESO*(Z)), (int)(Y  - HESO*(Z)));
         
-        point5 = new Point((int)(X-HESO*(Y)), (int)(Z + H - HESO*(Y)));
-        point6 = new Point((int)(X + L -HESO*(Y)), (int)(Z + H - HESO*(Y)));
-        point7 = new Point((int)(X + L -HESO*(Y+W)), (int)(Z + H  - HESO*(Y+W)));
-        point8 = new Point((int)(X - HESO*(Y+W)), (int)(Z + H - HESO*(Y+W)));
+        point5 = new Point((int)(X - HESO*(Z+H)), (int)(Y - HESO*(Z+H)));
+        point6 = new Point((int)(X  - HESO*(Z+H)), (int)(Y + W - HESO*(Z+H)));
+        point7 = new Point((int)(X + L - HESO*(Z+H)), (int)(Y +  W  - HESO*(Z+H)));
+        point8 = new Point((int)(X + L - HESO*(Z+H)), (int)(Y - HESO*(Z+H)));
    
         //xử lý toạ độ
         point1 = doitoado.NDtoM(point1.x, point1.y);
