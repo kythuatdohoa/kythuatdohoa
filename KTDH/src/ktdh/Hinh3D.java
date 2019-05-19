@@ -2,9 +2,11 @@
 package ktdh;
 
 import Element.DoiToaDo;
+import Element.DrawCone;
 import Element.DrawCube;
 import Element.DrawPyramid;
 import Element.Dthang;
+import Element.Elip;
 import Element.HienThiThongTIn;
 import Element.NhapToaDo3D;
 import java.awt.Color;
@@ -42,10 +44,11 @@ public class Hinh3D extends javax.swing.JFrame {
         HHCN = new javax.swing.JButton();
         CHOP = new javax.swing.JButton();
         ToaDo = new javax.swing.JPanel();
-        CLEAR = new javax.swing.JButton();
         color = new javax.swing.JButton();
         infor = new javax.swing.JButton();
         NhapToaDo = new javax.swing.JButton();
+        CHOP1 = new javax.swing.JButton();
+        CLEAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,19 +74,12 @@ public class Hinh3D extends javax.swing.JFrame {
         ToaDo.setLayout(ToaDoLayout);
         ToaDoLayout.setHorizontalGroup(
             ToaDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 833, Short.MAX_VALUE)
         );
         ToaDoLayout.setVerticalGroup(
             ToaDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 724, Short.MAX_VALUE)
         );
-
-        CLEAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/clear.png"))); // NOI18N
-        CLEAR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CLEARActionPerformed(evt);
-            }
-        });
 
         color.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/color.png"))); // NOI18N
         color.addActionListener(new java.awt.event.ActionListener() {
@@ -106,12 +102,26 @@ public class Hinh3D extends javax.swing.JFrame {
             }
         });
 
+        CHOP1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/cone2.png"))); // NOI18N
+        CHOP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CHOP1ActionPerformed(evt);
+            }
+        });
+
+        CLEAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/clear.png"))); // NOI18N
+        CLEAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLEARActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(NhapToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,10 +130,12 @@ public class Hinh3D extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(CHOP1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(ToaDo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,12 +143,13 @@ public class Hinh3D extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(HHCN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NhapToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                    .addComponent(CHOP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CHOP1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CLEAR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -159,6 +172,7 @@ public class Hinh3D extends javax.swing.JFrame {
     //======o0o==KHAI BÁO==o0o=========//
     public Color  choosecolor;
     DoiToaDo doitoado = new DoiToaDo();
+    Color[][] arrcolor = new Color[165][115];
     //======o0o==HÀM CON==o0o=========//
     public void heToaDo(){
         Graphics2D graphic = (Graphics2D) ToaDo.getGraphics();
@@ -186,7 +200,20 @@ public class Hinh3D extends javax.swing.JFrame {
         graphic.drawLine(ToaDo.getWidth()/2, ToaDo.getHeight()/2, 146, 570); 
         graphic.drawString("Y", 146 - 10, 570 - 10);    
     }
+    //=== putcolor ===//
+//    public void putcolor(int x,int y, Color m)
+//        {
+//            if (x < 0 || x > 830 || y < 0 || y > 570) return;
+//            arrcolor[doitoado.round(x)/5][doitoado.round(y)/5]= m;
+//        }
+//    public void putcolor1(int x, int y, int cx, int cy, Color m){
+//            putcolor(x + cx, y + cy, m);
+//            putcolor(-x + cx, y + cy, m);
+//            putcolor(x + cx, -y + cy, m);
+//            putcolor(-x + cx, -y + cy, m);
+//    }
     
+    //=== vẽ đường thẳng ===//
     public void putpixel(int x,int y, Color color){
         double a=2.5;
         if (x < 0 || x > 830 || y < 0 || y > 600) return;
@@ -269,6 +296,59 @@ public class Hinh3D extends javax.swing.JFrame {
         }
     } 
     
+    //===vẽ eclip ===//
+    public void put4pitxel(int x, int y, int pointx, int pointy, Color m){
+        putpixel(x+pointx, y+pointy,m);
+        putpixel(-x + pointx, y + pointy, m);
+        putpixel(x+pointx, -y+pointy, m);
+        putpixel(-x+pointx, -y+pointy, m);
+    }
+    
+    public void Midpoint_elip(Elip T){
+        int x, y, pointx, pointy, R, r;
+        pointx = T.point.x; 
+        pointy= T.point.y;
+        R = T.R; r = T.r;
+        Color m = T.mau;
+        x = 0; y = r;
+        int A, B;
+        A = R * R;
+        B = r * r;
+        double p = B + A / 4 - A * r;
+        x = 0;
+        y = r;
+        int Dx = 0;
+        int Dy = 2 * A * y;
+        put4pitxel(x, y, pointx, pointy, m);
+          
+        while (Dx < Dy){
+            x++;
+            Dx += 2 * B;
+            if (p < 0)
+                p += B + Dx;
+            else{
+                y--;
+                Dy -= 2 *A;
+                p += B+ Dx - Dy;
+            }
+            //putcolor1(doitoado.round(x), doitoado.round(y), pointx, pointy, m);
+            if(x%5==0) put4pitxel(x,doitoado.round( y), pointx, pointy, m);
+        }
+        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A* B);
+        while (y > 0){
+            y--;
+            Dy -= A * 2;
+            if (p > 0)
+                p += A- Dy;
+            else{
+                x++;
+                Dx += B * 2;
+                p +=A - Dy + Dx;
+            }
+            //putcolor1(doitoado.round(x), doitoado.round(y), pointx, pointy, m);
+            if(x%5==0)  put4pitxel(x,doitoado.round(y), pointx, pointy, m);
+        }
+    }
     //======o0o==BUTTON==o0o=========//
     //Chọn màu
     private void colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorActionPerformed
@@ -297,6 +377,8 @@ public class Hinh3D extends javax.swing.JFrame {
         line_DDA(DrawCube.dt10);
         line_DDA(DrawCube.dt11);
         line_DDA(DrawCube.dt12);
+        
+        //  { for (i = 0; i < elippses.Length; i++) Midpoint_elip(elippses[i]); }
     }//GEN-LAST:event_HHCNActionPerformed
 
     //vẽ hình chóp
@@ -323,6 +405,17 @@ public class Hinh3D extends javax.swing.JFrame {
     private void CLEARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEARActionPerformed
         repaint();
     }//GEN-LAST:event_CLEARActionPerformed
+
+    //hình nón
+    private void CHOP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHOP1ActionPerformed
+        heToaDo();
+        NetDut_DDA(DrawCone.dt1);
+        NetDut_DDA(DrawCone.dt2);
+        line_DDA(DrawCone.dt3);
+        line_DDA(DrawCone.dt4);
+        NetDut_DDA(DrawCone.dt5);
+        Midpoint_elip(DrawCone.elip);
+    }//GEN-LAST:event_CHOP1ActionPerformed
 
    
    //========================================================================//
@@ -366,6 +459,7 @@ public class Hinh3D extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CHOP;
+    private javax.swing.JButton CHOP1;
     private javax.swing.JButton CLEAR;
     private javax.swing.JButton HHCN;
     private javax.swing.JButton NhapToaDo;

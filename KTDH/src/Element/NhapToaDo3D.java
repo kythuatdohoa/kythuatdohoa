@@ -135,7 +135,7 @@ public class NhapToaDo3D extends JFrame {
             }
         });
         //=====txtL=====//
-        JLabel lblL = new JLabel("Chiều dài  L   : ");
+        JLabel lblL = new JLabel("Chiều dài  L/R  : ");
         txtL = new JTextField();
         
         txtL.addKeyListener(new KeyAdapter() {
@@ -169,7 +169,7 @@ public class NhapToaDo3D extends JFrame {
         });
         
         //=====txtW=====//
-        JLabel lblW = new JLabel("Chiều rộng  W   : ");
+        JLabel lblW = new JLabel("Chiều rộng  W/r   : ");
         txtW = new JTextField();
         
         txtW.addKeyListener(new KeyAdapter() {
@@ -291,6 +291,7 @@ public class NhapToaDo3D extends JFrame {
                     H = Integer.parseInt(txtH.getText());  
                     new DrawCube(choosecolor, X, Y, Z, L, W, H);
                     new DrawPyramid(choosecolor, X, Y, Z, L, W, H);
+                    new DrawCone(choosecolor, X, Y, Z, L, W, H);
                     dispose();
                 }
             }                               

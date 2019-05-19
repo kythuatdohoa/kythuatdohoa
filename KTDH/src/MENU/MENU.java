@@ -1,7 +1,7 @@
 
 package MENU;
 
-import ktdh.Hinh2D;
+import ktdh.Hinh2D_2;
 import ktdh.Hinh3D;
 
 /**
@@ -155,7 +155,7 @@ public class MENU extends javax.swing.JFrame {
     //========================================================================//
     //2D
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ktdh.Hinh2D nhom8 = new Hinh2D();
+        ktdh.Hinh2D_2 nhom8 = new Hinh2D_2();
         nhom8.setVisible(true);
         nhom8.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton1ActionPerformed
