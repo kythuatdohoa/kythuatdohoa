@@ -11,6 +11,7 @@ import Element.NhapToaDo3D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -211,6 +212,9 @@ public class Hinh3D extends javax.swing.JFrame {
 
         Graphics2D graphic = (Graphics2D) ToaDo.getGraphics();
 
+//        graphic.setPaint(color);
+//        graphic.fill(new Rectangle2D.Double(x, y, a, a));
+        
         graphic.setPaint(color);
         graphic.fill(new Ellipse2D.Double(x, y, a, a));
 
@@ -222,7 +226,6 @@ public class Hinh3D extends javax.swing.JFrame {
 
         graphic.setPaint(color);
         graphic.fill(new Ellipse2D.Double(x - a, y, a, a));
-
     }
 
     public void line_DDA(Dthang T) { // Ve duong thang co dinh dang mau
