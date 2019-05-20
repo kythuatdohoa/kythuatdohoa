@@ -70,6 +70,7 @@ public class Hinh3D extends javax.swing.JFrame {
             }
         });
 
+        ToaDo.setBackground(new java.awt.Color(255, 255, 255));
         ToaDo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout ToaDoLayout = new javax.swing.GroupLayout(ToaDo);

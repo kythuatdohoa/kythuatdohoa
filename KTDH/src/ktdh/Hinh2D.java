@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import javax.swing.JColorChooser;
 //import Element.POINT;
 
@@ -101,6 +102,7 @@ public class Hinh2D extends javax.swing.JFrame {
             }
         });
 
+        Panel_ToaDo.setBackground(new java.awt.Color(255, 255, 255));
         Panel_ToaDo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Panel_ToaDo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -230,7 +232,7 @@ public class Hinh2D extends javax.swing.JFrame {
     public void heToaDo(){
         Graphics2D graphic = (Graphics2D) this.Panel_ToaDo.getGraphics();
         //đứng
-        graphic.setColor(Color.blue);
+        graphic.setColor(Color.black);
         for (int i = 0; i <= Panel_ToaDo.getWidth() / 5; i++) {
             graphic.drawLine(5 * i, 0, 5 * i, Panel_ToaDo.getHeight());
         }
@@ -394,7 +396,113 @@ public class Hinh2D extends javax.swing.JFrame {
     //=====các button===//
     //HIỆU ỨNG
     private void hieu_ungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ungActionPerformed
+        Color m = Color.WHITE;
+        for(int i=0; i<=700; i=i+20){
+             heToaDo();
+             //body xe
+             point5 = new Point(10+i, 350);
+             point6 = new Point(220+i, 350);
+             dt3 = new Dthang(point5, point6, choosecolor);
+             line_DDA(dt3);
+             point7 = new Point(60+i, 350);
+             point8 = new Point(75+i, 330);
+             dt4 = new Dthang(point7, point8, choosecolor);
+             line_DDA(dt4);
 
+             point9 = new Point(150+i, 330);
+             dt5 = new Dthang(point8, point9, choosecolor);
+             line_DDA(dt5);
+
+             point10 = new Point(165+i, 350);
+             dt6 = new Dthang(point9, point10, choosecolor);
+             line_DDA(dt6);
+
+             point11 = new Point(10+i, 380);
+             dt7 = new Dthang(point5, point11, choosecolor);
+             line_DDA(dt7);
+
+             point12 = new Point(220+i, 380);
+             dt8 = new Dthang(point6, point12, choosecolor);
+             line_DDA(dt8);
+
+             point13 = new Point(65+i,380);
+             ht1 = new Htron(15,point13,choosecolor);
+             ht2 = new Htron(2,point13,choosecolor);
+             Midpoint_htron(ht1);
+             Midpoint_htron(ht2);
+
+             point14 = new Point(145+i,380);
+             ht3 = new Htron(15,point14,choosecolor);
+             ht4 = new Htron(2,point14,choosecolor);
+             Midpoint_htron(ht3);
+             Midpoint_htron(ht4);
+
+             point15 = new Point(60+i, 380);
+             dt9 = new Dthang(point15, point11, choosecolor);
+             line_DDA(dt9);
+
+             point16 = new Point(80+i, 380);
+             point17 = new Point(130+i, 380);
+             dt10 = new Dthang(point16, point17, choosecolor);
+             line_DDA(dt10);
+
+             point18 = new Point(160+i, 380);
+             dt11 = new Dthang(point12, point18, choosecolor);
+             line_DDA(dt11);
+             //body xe
+             point5 = new Point(10+i, 350);
+             point6 = new Point(220+i, 350);
+             dt3 = new Dthang(point5, point6, m);
+             line_DDA(dt3);
+
+             point7 = new Point(60+i, 350);
+             point8 = new Point(75+i, 330);
+             dt4 = new Dthang(point7, point8, m);
+             line_DDA(dt4);
+
+             point9 = new Point(150+i, 330);
+             dt5 = new Dthang(point8, point9, m);
+             line_DDA(dt5);
+
+             point10 = new Point(165+i, 350);
+             dt6 = new Dthang(point9, point10, m);
+             line_DDA(dt6);
+
+             point11 = new Point(10+i, 380);
+             dt7 = new Dthang(point5, point11, m);
+             line_DDA(dt7);
+
+             point12 = new Point(220+i, 380);
+             dt8 = new Dthang(point6, point12, m);
+             line_DDA(dt8);
+
+             point13 = new Point(65+i,380);
+             ht1 = new Htron(15,point13,m);
+             ht2 = new Htron(2,point13,m);
+             Midpoint_htron(ht1);
+             Midpoint_htron(ht2);
+
+             point14 = new Point(145+i,380);
+             ht3 = new Htron(15,point14,m);
+             ht4 = new Htron(2,point14,m);
+             Midpoint_htron(ht3);
+             Midpoint_htron(ht4);
+
+             point15 = new Point(60+i, 380);
+             dt9 = new Dthang(point15, point11, m);
+             line_DDA(dt9);
+
+             point16 = new Point(80+i, 380);
+             point17 = new Point(130+i, 380);
+             dt10 = new Dthang(point16, point17, m);
+             line_DDA(dt10);
+
+             point18 = new Point(160+i, 380);
+             dt11 = new Dthang(point12, point18, m);
+             line_DDA(dt11);
+        }
+        
+        
         
     }//GEN-LAST:event_hieu_ungActionPerformed
 
