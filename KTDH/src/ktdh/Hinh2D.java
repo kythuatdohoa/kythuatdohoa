@@ -282,7 +282,7 @@ public class Hinh2D extends javax.swing.JFrame {
             putpixel(cx - y,cy - x, m);
     }
     
-    public void Midpoint_htron (Htron T){
+    public void Midpoint_htron (Htron T){// ve hinh tron
         int x, y,cx,cy,p,R;
         DoiToaDo doitoado = new DoiToaDo();
         Color m=T.mau;
@@ -298,6 +298,70 @@ public class Hinh2D extends javax.swing.JFrame {
             else { p += 2 * (x - y) +5; y-=5; }
             x+=5;
             put8pitxel(x,y,cx,cy, m);
+        }
+    }
+    public void put4pitxel(int x, int y, int pointx, int pointy, Color m) {
+        //put dưới
+            //nửa phải
+        putpixel(x + pointx, y + pointy, m);
+            //nửa trái
+        putpixel(-x + pointx, y + pointy, m);
+        
+        //put trên
+            //nửa phải
+        putpixel(x + pointx, -y + pointy, m);
+            //nửa trái
+        putpixel(-x + pointx, -y + pointy, m);
+    }
+
+    public void Midpoint_elip(Elip T) {
+        DoiToaDo doitoado = new DoiToaDo();
+        int x, y, pointx, pointy, R, r;
+        pointx = T.point.x;
+        pointy = T.point.y;
+        R = T.R;
+        r = T.r;
+        Color m = T.mau;
+        x = 0;
+        y = r;
+        int A, B;
+        A = R * R;
+        B = r * r;
+        double p = B + A / 4 - A * r;
+        x = 0;
+        y = r;
+        int Dx = 0;
+        int Dy = 2 * A * y;
+        put4pitxel(x, y, pointx, pointy, m);
+
+        while (Dx < Dy) {
+            x++;
+            Dx += 2 * B;
+            if (p < 0) {
+                p += B + Dx;
+            } else {
+                y--;
+                Dy -= 2 * A;
+                p += B + Dx - Dy;
+            }
+            if (x % 5 == 0) {
+                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
+            }
+        }
+        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A * B);
+        while (y > 0) {
+            y--;
+            Dy -= A * 2;
+            if (p > 0) {
+                p += A - Dy;
+            } else {
+                x++;
+                Dx += B * 2;
+                p += A - Dy + Dx;
+            }
+            if (x % 5 == 0) {
+                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
+            }
         }
     }
     
@@ -517,8 +581,92 @@ public class Hinh2D extends javax.swing.JFrame {
     }//GEN-LAST:event_draw1ActionPerformed
 
     //VẼ HÌNH 2
+    public Point point24, point25, point26, point27, point28,point29,
+            point30,point31,point32,point33,point34,point35,point36,
+            point37,point38,point39,point40,point41;
+    public Dthang dt17,dt18,dt19,dt20,dt21,dt22,dt23,dt24,dt25,dt26,
+            dt27,dt28,dt29,dt30;
+    public Htron ht5,ht6;
+    public Elip el1, el2;
+    
+    private void Header(){
+        point24 = new Point (160,70);
+        ht5 = new Htron(30,point24,choosecolor);
+        Midpoint_htron(ht5);
+    }
+    private void Body(){
+        //thanh nguoi
+        point25 = new Point (160,100);
+        point26 = new Point (160,150);
+        dt17 = new Dthang (point25,point26, choosecolor);
+        line_DDA(dt17);
+        //tay trai
+        point27 = new Point (120,120);
+        dt18 = new Dthang (point25,point27,choosecolor);
+        line_DDA(dt18);
+        point28 = new Point (145,135);
+        dt19 = new Dthang (point27,point28,choosecolor );
+        line_DDA(dt19);
+        //tay phai
+        point29 = new Point (180,120);
+        dt20 = new Dthang(point25, point29, choosecolor);
+        line_DDA(dt20);
+        point30 = new Point (200,100);
+        dt21 = new Dthang( point29, point30, choosecolor);
+        line_DDA(dt21);
+        //chantrai
+        point31 = new Point (180,200);
+        dt22 = new Dthang(point26, point31, choosecolor);
+        line_DDA(dt22);
+        point32 = new Point (160,250);
+        dt23 = new Dthang(point31, point32, choosecolor);
+        line_DDA(dt23);
+        point33 = new Point (170,250);
+        el1 = new Elip(point33, 10, 5, choosecolor);
+        Midpoint_elip(el1);
+        //chan phai
+        point34 = new Point (210,175);
+        dt24 = new Dthang(point26, point34, choosecolor);
+        line_DDA(dt24);
+        point35 = new Point (235,225);
+        dt25 = new Dthang(point34, point35, choosecolor);
+        line_DDA(dt25);
+        point36 = new Point (245,225);
+        el2 = new Elip(point36, 10, 5, choosecolor);
+        Midpoint_elip(el2);
+        
+        
+       
+    }
+    private void Goal(){
+       // cot doc tren
+       point37 = new Point(650, 90);
+       point38 = new Point(700, 90);
+       dt26 = new Dthang(point37, point38, choosecolor);
+       line_DDA(dt26); 
+       //cot doc duoi
+       point39 = new Point(650, 245);
+       point40 = new Point(700, 245);
+       dt27 = new Dthang(point39, point40, choosecolor);
+       line_DDA(dt27); 
+       //cot ngang
+       dt28 = new Dthang(point37, point39, choosecolor);
+       line_DDA(dt28);
+    }
+    private void Ball(){
+        point41 = new Point (300,150);
+        ht6 = new Htron(20,point41,choosecolor);
+        Midpoint_htron(ht6);
+    }
+    
     private void draw2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draw2ActionPerformed
         // TODO add your handling code here:
+        heToaDo();
+        Header();
+        Body();
+        Goal();
+        Ball();
+        
     }//GEN-LAST:event_draw2ActionPerformed
 
    //========================================================================//
