@@ -158,25 +158,24 @@ public class Hinh2D extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(draw1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(draw, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)
                         .addComponent(hieu_ung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(draw2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(draw2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(hieu_ung1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1))
@@ -218,8 +217,8 @@ public class Hinh2D extends javax.swing.JFrame {
 
     
     //========================================================================//
-    static int click=-1;
-    public Point[] points = new Point[2];
+    //static int click=-1;
+    //public Point[] points = new Point[2];
     public Color choosecolor;
     public Point point1,point2,point3,point4 ,point5,point6,point7,
             point8,point9,point10,point11,point12,point13,point14,
@@ -233,8 +232,7 @@ public class Hinh2D extends javax.swing.JFrame {
     public Dthang dt1, dt2  ,dt3, dt4, dt5,dt6,dt7,dt8,dt9,dt10,dt11,
             dt12,dt13,dt14,dt15,dt16,dt17,dt18,dt19,dt20,dt21,dt22,
             dt23,dt24,dt25,dt26,dt27,dt28,dt29,dt30,dt31,dt32,
-            dtcc1,dtcc2,
-            dtcc3,dtcc4,dtcc5,dtcc6,dtcc7,dtcc8,dttru;
+            dtcc1,dtcc2,dtcc3,dtcc4,dtcc5,dtcc6,dtcc7,dtcc8,dttru;
     
     public Htron ht1,ht2,ht3,ht4,ht5,ht6,htmt;
 
@@ -244,12 +242,12 @@ public class Hinh2D extends javax.swing.JFrame {
     double cos45 = Math.cos(-45);
     
     DoiToaDo doitoado = new DoiToaDo();
-    public Dthang[] lines;
-    public Htron[] circles ;
-    public Hvuong[] squares;
-    public Hcn[] rectangles;
-    public Elip[] elippses;
-    public Hbh[] hinhbhs;
+//    public Dthang[] lines;
+//    public Htron[] circles ;
+//    public Hvuong[] squares;
+//    public Hcn[] rectangles;
+//    public Elip[] elippses;
+//    public Hbh[] hinhbhs;
     
     //========================================================================//
     //===HÀM CON===//
@@ -413,8 +411,8 @@ public class Hinh2D extends javax.swing.JFrame {
     //15:47 21-5 jun
     //tịnh tiến
     
-    public Point Tinhtien(Point d1,int dx,int dy)// tinh tien sang diem moi
-        {
+    public Point Tinhtien(Point d1,int dx,int dy){// tinh tien sang diem moi
+
             int x,y;
             x=d1.x;y=d1.y;
             double[][] matran1;
@@ -438,22 +436,23 @@ public class Hinh2D extends javax.swing.JFrame {
             Point pt2 = nhanMT2(matran1, mang);
             Point kq = new Point(doitoado.round(pt2.x), doitoado.round(pt2.y));
             return kq;
-        }
-    public Point nhanMT2(float[][]matran, float[] mang)//
-    {
-        float[] mangtam;
-        mangtam = new float[3];
-        int dem = 0;
-        for (int i = 0; i < 3; i++)
-        {
-            mangtam[i] =    mang[0] * matran[0][dem] 
-                        +   mang[1] * matran[1][dem] 
-                        +   mang[2] * matran[2][dem];
-            dem++;
-        }
-        Point pt = new Point((int)(mangtam[0]),(int)(mangtam[1]));
-        return pt;
     }
+    
+//    public Point nhanMT2(float[][]matran, float[] mang)//
+//    {
+//        float[] mangtam;
+//        mangtam = new float[3];
+//        int dem = 0;
+//        for (int i = 0; i < 3; i++)
+//        {
+//            mangtam[i] =    mang[0] * matran[0][dem] 
+//                        +   mang[1] * matran[1][dem] 
+//                        +   mang[2] * matran[2][dem];
+//            dem++;
+//        }
+//        Point pt = new Point((int)(mangtam[0]),(int)(mangtam[1]));
+//        return pt;
+//    }
     public Point nhanMT2(double[][]matran, double[] mang)
     {
         double[] mangtam;
@@ -469,53 +468,102 @@ public class Hinh2D extends javax.swing.JFrame {
         Point pt = new Point((int)(mangtam[0]), (int)(mangtam[1]));
         return pt;
     }
-    public void bd_tinhtien_dt_chanphai_tren1(int dx,int dy){
+    
+    public void bd_tinhtien_dt_chanphai_tren1(int dx,int dy, Color color){
         for (int i=0; i<-dx;i++){
             for (int j=0;j<dy;j++) {
-        Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), Color.GREEN);
-            line_DDA(dt24);    
+                Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), color);
+                line_DDA(dt24);    
             }
-            
-        }
-        
+        }   
     }
-    public void bd_tinhtien_dt_chanphai_tren2(int dx,int dy){
+    
+    public void bd_tinhtien_dt_chanphai_tren2(int dx,int dy, Color color){
        for (int i=0;i<-dx;i++){
             for (int j=0;j<dy;j++) {
-        Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), Color.GREEN);
+        Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), color);
              line_DDA(dt24);   
             }
-         }
-       
-          
+         }     
     }
-    public void bd_tinhtien_dt_chanphai_duoi1(int dx,int dy){
-        Dthang temp = new Dthang(Tinhtien(point34,-15,10), Tinhtien(point35, dx,dy), Color.GREEN);
+    
+    public void bd_tinhtien_dt_chanphai_duoi1(int dx,int dy, Color color){
+        Dthang temp = new Dthang(Tinhtien(point34,-15,10), Tinhtien(point35, dx,dy),color);
                 line_DDA(temp);
        
     }
-    public void bd_tinhtien_dt_chanphai_duoi2(int dx,int dy){
-        Dthang temp = new Dthang(Tinhtien(point34,10,-10), Tinhtien(point35, dx,dy), Color.GREEN);
+    
+    public void bd_tinhtien_dt_chanphai_duoi2(int dx,int dy, Color color){
+        Dthang temp = new Dthang(Tinhtien(point34,10,-10), Tinhtien(point35, dx,dy), color);
                 line_DDA(temp);
         
     }
     
-    public void bd_tinhtien_htr(int dx, int dy){
-        Htron temp = new Htron(20, Tinhtien(point41,dx,dy), Color.BLACK);
+    public void bd_tinhtien_htr(int dx, int dy, Color color){
+        Htron temp = new Htron(20, Tinhtien(point41,dx,dy), color);
                 Midpoint_htron(temp);
               //  circles[stt] = temp;
     }
-    public void bd_tinhtien_elip1(int dx, int dy){
-        Elip temp = new Elip(Tinhtien(point36, dx,dy), 10, 5, Color.GREEN);
+    
+    public void bd_tinhtien_elip1(int dx, int dy, Color color){
+        Elip temp = new Elip(Tinhtien(point36, dx,dy), 10, 5, color);
                 Midpoint_elip(temp);
                // elippses[stt] = temp;
     }
-    public void bd_tinhtien_elip2(int dx, int dy){
-        Elip temp = new Elip(Tinhtien(point36, dx,dy), 10, 5, Color.GREEN);
+    
+    public void bd_tinhtien_elip2(int dx, int dy, Color color){
+        Elip temp = new Elip(Tinhtien(point36, dx,dy), 10, 5, color);
                 Midpoint_elip(temp);
                // elippses[stt] = temp;
     }
+       
+    public Point Quay(Point point1,Point point2){// Quay 1 diem (x,y)quanh diem(xo,yo)1 goc a;
+            Point dd1, dd2;
+            int x, y, xo, yo;
+            int a = -15;
+            double[][] matran1;
+            double[][] matran2;
+            double[][] matran3;
+            double[] mang;
+            double cos, sin;
             
+//            dd1 = new Point(point1.x/5-166, 120-point1.y/5);
+//            dd2 = new Point(point2.x/5-166, 120-point2.y/5);
+            dd1 = new Point(point1.x, point1.y);
+            dd2 = new Point(point2.x, point2.y);
+            x = dd1.x; y = dd1.y; xo = dd2.x; yo = dd2.y;
+            mang = new double[3];
+            matran1 = new double[3][3];
+            matran2 = new double[3][3];
+            matran3 = new double[3][3];
+            
+            // ma tran tinh tien (xo,yo)ve goc toa do
+            matran1[0][0] = 1; matran1[0][1] = 0; matran1[0][2] = 0;
+            matran1[1][0] = 0; matran1[1][1] = 1; matran1[1][2] = 0;
+            matran1[2][0] = -xo; matran1[2][1] = -yo; matran1[2][2] = 1;
+            mang[0] = x; mang[1] = y; mang[2] = 1;
+            Point pt = nhanMT2(matran1, mang);
+            
+            //Ma tran quay quanh goc toa do mot goc a;
+            sin = Math.sin((Math.PI * a) / 180);
+            cos = Math.cos((Math.PI * a) / 180);
+            matran2[0][0] = cos; matran2[0][1] = sin; matran2[0][2] = 0;
+            matran2[1][0] = -1 * sin; matran2[1][1] = cos; matran2[1][2] = 0;
+            matran2[2][0] = 0; matran2[2][1] = 0; matran2[2][2] = 1;
+            mang[0] = pt.x; mang[1] = pt.y; mang[2] = 1;
+            Point pt1 = nhanMT2(matran2, mang);
+            
+            // ma tran doi diem ve toa do cu
+            matran3[0][0] = 1; matran3[0][1] = 0; matran3[0][2] = 0;
+            matran3[1][0] = 0; matran3[1][1] = 1; matran3[1][2] = 0;
+            matran3[2][0] = xo; matran3[2][1] = yo; matran3[2][2] = 1;
+            mang[0] = pt1.x; mang[1] = pt1.y; mang[2] = 1;
+            Point pt2 = nhanMT2(matran3, mang);
+            //Point kq = new Point(pt2.x*5 + 830, 600 - pt2.y*5);
+            Point kq = new Point(pt2.x, pt2.y);
+            
+            return kq;
+        }
     //15;47 21-5
 
     //=====các button===//
@@ -621,20 +669,10 @@ public class Hinh2D extends javax.swing.JFrame {
    
      //   }  
     }
-    Point temp1,temp2;
+  
     private void hieuUng_chongChong(){
         Color m = Color.WHITE;
-      
-//             System.out.println(pointcc1);
-//            System.out.println(pointcc2);
-//            System.out.println(pointcc3);
-//            System.out.println(pointcc4);
-//            System.out.println(pointcc5);
-//            System.out.println(pointcc6);
-//            System.out.println(pointcc7);
-//            System.out.println(pointcc8);
-//            System.out.println(" ");
-            heToaDo();
+        heToaDo();
             dtcc1 = new Dthang (pointcc1, pointcc5, Color.BLUE);
             dtcc2 = new Dthang (pointcc3, pointcc7, Color.BLUE);
             dtcc3 = new Dthang (pointcc2, pointcc6, Color.BLUE);
@@ -644,18 +682,6 @@ public class Hinh2D extends javax.swing.JFrame {
             dtcc7 = new Dthang (pointcc5, pointcc6, Color.BLUE);
             dtcc8 = new Dthang (pointcc7, pointcc8, Color.BLUE);
 
-            
-            temp1=pointcc1;
-            temp2=pointcc2;
-            pointcc1=pointcc3;
-            pointcc2=pointcc4;
-            pointcc3=pointcc5;
-            pointcc4=pointcc6;
-            pointcc5=pointcc7;
-            pointcc6=pointcc8;
-            pointcc7=temp1;
-            pointcc8=temp2;
-            
             line_DDA(dtcc1);
             line_DDA(dtcc2);
             line_DDA(dtcc3);
@@ -664,6 +690,8 @@ public class Hinh2D extends javax.swing.JFrame {
             line_DDA(dtcc6);
             line_DDA(dtcc7);
             line_DDA(dtcc8);
+            
+        
             /////
             dtcc1 = new Dthang (pointcc1, pointcc5, m);
             dtcc2 = new Dthang (pointcc3, pointcc7, m);
@@ -683,32 +711,66 @@ public class Hinh2D extends javax.swing.JFrame {
             line_DDA(dtcc6);
             line_DDA(dtcc7);
             line_DDA(dtcc8);
-      //  }
+            line_DDA(dttru);
+            
+            pointcc1=Quay(pointcc1, pointtrucc);
+            pointcc2=Quay(pointcc2, pointtrucc);
+            pointcc3=Quay(pointcc3, pointtrucc);
+            pointcc4=Quay(pointcc4, pointtrucc);
+            pointcc5=Quay(pointcc5, pointtrucc);
+            pointcc6=Quay(pointcc6, pointtrucc);
+            pointcc7=Quay(pointcc7, pointtrucc);
+            pointcc8=Quay(pointcc8, pointtrucc);
+            heToaDo();
     }
     //21-5 jun v
     private void hieuUng_sut(){
-        bd_tinhtien_dt_chanphai_tren1(-15,10);
-        bd_tinhtien_dt_chanphai_duoi1(-25,5);
-        bd_tinhtien_elip1(-25,5);
-        bd_tinhtien_dt_chanphai_tren2 (10,-10);
-        bd_tinhtien_dt_chanphai_duoi2 (10,-15);
-        bd_tinhtien_elip1(10,-15);
+       // for(int i=0; i<10; i=i+2){
+        Color m = Color.BLACK;
+        bd_tinhtien_dt_chanphai_tren1(-15,10,m);
+        bd_tinhtien_dt_chanphai_duoi1(-25,5,m);
+        bd_tinhtien_elip1(-25,5,m);
+        bd_tinhtien_dt_chanphai_tren2 (10,-10,m);
+        bd_tinhtien_dt_chanphai_duoi2 (10,-15,m);
+        bd_tinhtien_elip1(10,-15,m);   
+        
+        m = Color.WHITE;
+        bd_tinhtien_dt_chanphai_tren1(-15,10,m);
+        bd_tinhtien_dt_chanphai_duoi1(-25,5,m);
+        bd_tinhtien_elip1(-25,5,m);
+        bd_tinhtien_dt_chanphai_tren2 (10,-10,m);
+        bd_tinhtien_dt_chanphai_duoi2 (10,-15,m);
+        bd_tinhtien_elip1(10,-15,m);   
+        
+     //   }
         
     }
+    
     private void hieuUng_ball(){
-        Color m = Color.white;
-        heToaDo();
-        bd_tinhtien_htr(270,-365);
-
+        int i=0;
+        for(i=0; i<380; i=i+10){
+            Ball(i,i,choosecolor);
+            
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Hinh2D.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            Ball(i,i,Color.WHITE); 
+            heToaDo();
+        }
+        Ball(i,i,choosecolor);
     }
     //21-5 jun ^
     private void hieu_ungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ungActionPerformed
-        
-        for(int i=0; i<=700; i=i+20){
+        for(int i=0; i<=700; i=i+50){
+            heToaDo();
             hieuUng_xe(i);
-            hieuUng_chongChong();
-        
+            hieuUng_chongChong();  
         }
+        xe();
+        chongchong();
     }//GEN-LAST:event_hieu_ungActionPerformed
 
     //LÀM MỚI
@@ -931,8 +993,8 @@ public class Hinh2D extends javax.swing.JFrame {
        dt26 = new Dthang(point37, point38, choosecolor);
        line_DDA(dt26); 
        //cot doc duoi
-       point39 = new Point(650, 10);
-       point40 = new Point(650, 70);
+       point39 = new Point(699, 10);
+       point40 = new Point(699, 70);
        dt27 = new Dthang(point39, point40, choosecolor);
        line_DDA(dt27); 
        //cot ngang
@@ -940,20 +1002,22 @@ public class Hinh2D extends javax.swing.JFrame {
        line_DDA(dt28);
     }
     
-    private void Ball(){
-        point41 = new Point (280,435);
-        ht6 = new Htron(20,point41,choosecolor);
+    private void Ball(int x, int y, Color color){
+        point41 = new Point (280+x,435-y);
+        ht6 = new Htron(20,point41,color);
         Midpoint_htron(ht6);
     }
     
+    //VẼ HÌNH 2
     private void draw2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draw2ActionPerformed
         heToaDo();
         Header();
         Body();
         Goal();
-        Ball();   
+        Ball(0,0,choosecolor);   
     }//GEN-LAST:event_draw2ActionPerformed
 
+    //HIỆU ỨNG 2
     private void hieu_ung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ung1ActionPerformed
         // TODO add your handling code here:
             //21-5 jun  v

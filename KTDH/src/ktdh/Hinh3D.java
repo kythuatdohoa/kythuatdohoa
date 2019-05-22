@@ -631,6 +631,8 @@ public class Hinh3D extends javax.swing.JFrame {
     //làm mới
     private void CLEARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLEARActionPerformed
         repaint();
+        System.out.println("rong: "+ToaDo.getWidth());
+        System.out.println("cao: "+ToaDo.getHeight());
     }//GEN-LAST:event_CLEARActionPerformed
 
     //hình trụ
