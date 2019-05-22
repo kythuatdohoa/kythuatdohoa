@@ -470,33 +470,38 @@ public class Hinh2D extends javax.swing.JFrame {
         return pt;
     }
     public void bd_tinhtien_dt_chanphai_tren1(int dx,int dy){
-        //chanphai tren
-        Dthang temp = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, dx,dy), Color.GREEN);
-                line_DDA(temp);
-                dt31 = new Dthang(point26, point34, choosecolor);
-                dt31 = temp;
+        for (int i=0; i<-dx;i++){
+            for (int j=0;j<dy;j++) {
+        Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), Color.GREEN);
+            line_DDA(dt24);    
+            }
+            
+        }
+        
     }
     public void bd_tinhtien_dt_chanphai_tren2(int dx,int dy){
-        Dthang temp = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, dx,dy), Color.GREEN);
-                line_DDA(temp);
-                dt32 = new Dthang(point26, point34, choosecolor);
-                dt32 = temp;
+       for (int i=0;i<-dx;i++){
+            for (int j=0;j<dy;j++) {
+        Dthang dt24 = new Dthang(Tinhtien(point26,0,0), Tinhtien(point34, i,j), Color.GREEN);
+             line_DDA(dt24);   
+            }
+         }
+       
+          
     }
     public void bd_tinhtien_dt_chanphai_duoi1(int dx,int dy){
         Dthang temp = new Dthang(Tinhtien(point34,-15,10), Tinhtien(point35, dx,dy), Color.GREEN);
                 line_DDA(temp);
-        Dthang dt33 = new Dthang(point34, point35, choosecolor);
-                dt33 = temp;
+       
     }
     public void bd_tinhtien_dt_chanphai_duoi2(int dx,int dy){
         Dthang temp = new Dthang(Tinhtien(point34,10,-10), Tinhtien(point35, dx,dy), Color.GREEN);
                 line_DDA(temp);
-        Dthang dt34 = new Dthang(point34, point35, choosecolor);
-                dt34 = temp;
+        
     }
     
     public void bd_tinhtien_htr(int dx, int dy){
-        Htron temp = new Htron(10, Tinhtien(point41,dx,dy), Color.BLACK);
+        Htron temp = new Htron(20, Tinhtien(point41,dx,dy), Color.BLACK);
                 Midpoint_htron(temp);
               //  circles[stt] = temp;
     }
