@@ -717,7 +717,7 @@ public class Hinh2D extends javax.swing.JFrame {
             Ball(i,i,Color.WHITE); 
             heToaDo();
         }
-        Ball(i,i,choosecolor);
+        Ball(i,i,Color.white);
     }
     //21-5 jun ^
     private void hieu_ungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ungActionPerformed
