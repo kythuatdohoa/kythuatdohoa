@@ -149,7 +149,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         );
         Panel_ToaDoLayout.setVerticalGroup(
             Panel_ToaDoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         color.setBackground(new java.awt.Color(255, 255, 255));
@@ -193,6 +193,11 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         bkmt.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         nui2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        nui2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nui2ActionPerformed(evt);
+            }
+        });
 
         nui3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
@@ -419,7 +424,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cc5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -427,23 +432,22 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(draw, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(hieu_ung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(73, 73, 73)
+                .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(draw, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(hieu_ung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
         jPanel1Layout.setVerticalGroup(
@@ -457,9 +461,8 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                     .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 30, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Panel_ToaDo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -493,8 +496,8 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     
     public Htron ht1,ht2,ht3,ht4,htmt;
 
-    double sin20 = Math.sin(-20*Math.PI/180);
-    double cos20 = Math.cos(-20*Math.PI/180);
+    double sin45 = Math.sin(-10);
+    double cos45 = Math.cos(-10);
     
     DoiToaDo doitoado = new DoiToaDo();
     
@@ -672,6 +675,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
             
             return kq;
         }
+
 
     //=====các button===//
     //HIỆU ỨNG
@@ -855,7 +859,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         line_DDA(dt1);
         Graphics2D graphic = (Graphics2D) Panel_ToaDo.getGraphics();
         graphic.setPaint(Color.GREEN);
-        graphic.fill(new Rectangle2D.Double(0, 450, 700, 200));
+        graphic.fill(new Rectangle2D.Double(0, 450, 700, 120));
     }
     
     private void dthang_tren(){
@@ -928,16 +932,22 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     
     private void chongchong(){
         int k=80;
-        pointcc1 = new Point(-40,210+k);
-        pointcc5 = new Point(-40,210-k);
-        pointcc3 = new Point(-40+k,210);
-        pointcc7 = new Point(-40-k,210);
+        pointcc1 = new Point(-105,210+k);
+        pointcc5 = new Point(-105,210-k);
+        pointcc3 = new Point(-105+k,210);
+        pointcc7 = new Point(-105-k,210);
         
-        pointcc2 = new Point(  (int)((0)*cos20-(k)*sin20+(-40)  ), (int)((0)*sin20+(k)*cos20+(210)) );
-        pointcc6 = new Point(  (int)((0)*cos20-(-k)*sin20+(-40) ), (int)((0)*sin20+(-k)*cos20+(210))  );
-        pointcc4 = new Point(  (int)((k)*cos20-(0)*sin20+(-40)  ), (int)((k)*sin20+(0)*cos20+(210))  );
-        pointcc8 = new Point(  (int)((-k)*cos20-(0)*sin20+(-40) ), (int)((-k)*sin20+(0)*cos20+(210)) );
-
+//        pointcc2 = new Point(  (int)((0)*cos45-(k)*sin45+(-105) +50 ), (int)((0)*sin45+(k)*cos45+(210)) -50 );
+//        pointcc6 = new Point(  (int)((0)*cos45-(-k)*sin45+(-105) +50 ), (int)((0)*sin45+(-k)*cos45+(210)) -50 );
+//        pointcc4 = new Point(  (int)((k)*cos45-(0)*sin45+(-105)  +50 ), (int)((k)*sin45+(0)*cos45+(210))  -50);
+//        pointcc8 = new Point(  (int)((-k)*cos45-(0)*sin45+(-105) +50 ), (int)((-k)*sin45+(0)*cos45+(210))  -50);
+        pointcc2 = new Point(-75,265);
+        pointcc6 = new Point(-130,150);
+        pointcc4 = new Point(-50,185);
+        pointcc8 = new Point(-160,235);
+        
+        
+        
         pointcc1 = doitoado.NDtoM(pointcc1.x, pointcc1.y);
         pointcc2 = doitoado.NDtoM(pointcc2.x, pointcc2.y);
         pointcc3 = doitoado.NDtoM(pointcc3.x, pointcc3.y);
@@ -1003,7 +1013,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         
         //xuất
         nui2.setText("( "+doitoado.doiMtoND(point19.x, point19.y).x+" ,"+doitoado.doiMtoND(point19.x, point19.y).y+" )");
-        nui3.setText("( "+doitoado.doiMtoND(point21.x, point21.y).x+" ,"+doitoado.doiMtoND(point21.x, point21.y).y+" )");
+        nui3.setText("( "+doitoado.doiMtoND(point20.x, point20.y).x+" ,"+doitoado.doiMtoND(point20.x, point20.y).y+" )");
     }
     
     private void mattroi(){
@@ -1045,6 +1055,10 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     private void cc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cc1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cc1ActionPerformed
+
+    private void nui2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nui2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nui2ActionPerformed
 
    //========================================================================//
     
