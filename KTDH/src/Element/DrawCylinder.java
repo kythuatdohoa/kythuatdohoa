@@ -27,7 +27,8 @@ public class DrawCylinder {
 //        point4 = new Point((int)(X - HESO*(Z-H)), (int)(Y - HESO*(Z-H)));
 //        point5 = new Point((int)(X - L - HESO*(Z-H)), (int)(Y - HESO*(Z-H)));
 //        point6 = new Point((int)(X + L - HESO*(Z-H)), (int)(Y - HESO*(Z-H)));
-        
+
+        X*=5; Y*=5; Z*=5; L*=5; W*=5; H*=5;
         point1 = new Point(X, Y);
         point2 = new Point(X - L, Y);
         point3 = new Point(X + L, Y);

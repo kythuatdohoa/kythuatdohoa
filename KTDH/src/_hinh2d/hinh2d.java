@@ -1,19 +1,18 @@
 
-package MENU;
+package _hinh2d;
 
-import _hinh2d.hinh2d;
-import ktdh.Hinh3D;
+import ktdh.Hinh2D_1;
+import ktdh.Hinh2D_2;
 
 /**
  *
- * @author NHOMX
+ * @author NHOM8
  */
-public class MENU extends javax.swing.JFrame {
-    public MENU() {
+public class hinh2d extends javax.swing.JFrame {
+    public hinh2d() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,27 +31,27 @@ public class MENU extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 51));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 0));
         jLabel1.setFont(new java.awt.Font("Brush Script MT", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Chon he toa do");
+        jLabel1.setText("Chon che do ve");
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 0));
+        jButton1.setBackground(new java.awt.Color(0, 204, 255));
         jButton1.setFont(new java.awt.Font("Edwardian Script ITC", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("He toa do 2D");
+        jButton1.setText("He toa do 2D_1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 0));
+        jButton3.setBackground(new java.awt.Color(51, 255, 255));
         jButton3.setFont(new java.awt.Font("Edwardian Script ITC", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(204, 0, 0));
-        jButton3.setText("He toa do 3D");
+        jButton3.setText("He toa do 2D_2");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -150,28 +149,29 @@ public class MENU extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    //========================================================================//
-    //2D
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        _hinh2d.hinh2d nhom8 = new hinh2d();
+        ktdh.Hinh2D_1 nhom8 = new Hinh2D_1();
         nhom8.setVisible(true);
         nhom8.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    //3D
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ktdh.Hinh3D nhom8 = new Hinh3D();
+        ktdh.Hinh2D_2 nhom8 = new Hinh2D_2();
         nhom8.setVisible(true);
         nhom8.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton3ActionPerformed
-    //========================================================================//
+//============================================================================//
     
     
- 
+    
+    
+    
+    
+    
+    
+    
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -184,21 +184,21 @@ public class MENU extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hinh2d.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hinh2d.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hinh2d.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MENU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(hinh2d.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MENU().setVisible(true);
-                
+                new hinh2d().setVisible(true);
             }
         });
     }

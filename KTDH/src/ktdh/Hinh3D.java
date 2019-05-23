@@ -445,7 +445,7 @@ public class Hinh3D extends javax.swing.JFrame {
     //vẽ hình hộp
     private void HHCNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCNActionPerformed
         heToaDo();
-        putpixel(DrawCube.point1.x, DrawCube.point1.y, choosecolor);
+        putpixel(DrawCube.point1.x, DrawCube.point1.y, Color.RED);
         putpixel(DrawCube.point2.x, DrawCube.point2.y, choosecolor);
         putpixel(DrawCube.point3.x, DrawCube.point3.y, choosecolor);
         putpixel(DrawCube.point4.x, DrawCube.point4.y, choosecolor);
@@ -536,12 +536,13 @@ public class Hinh3D extends javax.swing.JFrame {
             Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
         }
         line_DDA(DrawCube.dt12);
+        putpixel(DrawCube.point1.x, DrawCube.point1.y, Color.RED);
     }//GEN-LAST:event_HHCNActionPerformed
 
     //vẽ hình chóp
     private void CHOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CHOPActionPerformed
         heToaDo();
-        putpixel(DrawPyramid.point1.x, DrawPyramid.point1.y, choosecolor);
+        putpixel(DrawPyramid.point1.x, DrawPyramid.point1.y,  Color.RED);
         putpixel(DrawPyramid.point2.x, DrawPyramid.point2.y, choosecolor);
         putpixel(DrawPyramid.point3.x, DrawPyramid.point3.y, choosecolor);
         putpixel(DrawPyramid.point4.x, DrawPyramid.point4.y, choosecolor);
@@ -620,7 +621,8 @@ public class Hinh3D extends javax.swing.JFrame {
             Thread.sleep(200);
         } catch (InterruptedException ex) {
             Logger.getLogger(Hinh3D.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
+        putpixel(DrawPyramid.point1.x, DrawPyramid.point1.y,  Color.RED);
     }//GEN-LAST:event_CHOPActionPerformed
 
     //thông tin
@@ -638,7 +640,7 @@ public class Hinh3D extends javax.swing.JFrame {
     //hình trụ
     private void TRUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRUActionPerformed
         heToaDo();
-        putpixel(DrawCylinder.point1.x, DrawCylinder.point1.y, choosecolor);
+        putpixel(DrawCylinder.point1.x, DrawCylinder.point1.y, Color.RED);
         putpixel(DrawCylinder.point2.x, DrawCylinder.point2.y, choosecolor);
         putpixel(DrawCylinder.point3.x, DrawCylinder.point3.y, choosecolor);
         putpixel(DrawCylinder.point4.x, DrawCylinder.point4.y, choosecolor);
@@ -693,6 +695,7 @@ public class Hinh3D extends javax.swing.JFrame {
         }
         //elip 2
         NetDut_Midpoint_elip(DrawCylinder.elip2);
+        putpixel(DrawCylinder.point1.x, DrawCylinder.point1.y, Color.RED);
     }//GEN-LAST:event_TRUActionPerformed
 
     //========================================================================//

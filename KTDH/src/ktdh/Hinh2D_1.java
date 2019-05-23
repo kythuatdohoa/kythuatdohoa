@@ -5,9 +5,6 @@ import Element.DoiToaDo;
 import Element.Dthang;
 import Element.Elip;
 import Element.Htron; 
-import Element.Hvuong;
-import Element.Hbh;
-import Element.Hcn;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -23,10 +20,14 @@ import javax.swing.JColorChooser;
  *
  * @author NHOM8
  */
-public class Hinh2D extends javax.swing.JFrame {
-    public Hinh2D() {
+public class Hinh2D_1 extends javax.swing.JFrame {
+    public Hinh2D_1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        color.setToolTipText("Chọn màu để vẽ !");
+        infor.setToolTipText("Hiển thị kích thước, toạ độ !");
+        hieu_ung.setToolTipText("Toạ hiệu ứng !");
+        lam_moi.setToolTipText("Xoá !");
     }
 
     @SuppressWarnings("unchecked")
@@ -41,9 +42,8 @@ public class Hinh2D extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         draw = new javax.swing.JButton();
         Panel_ToaDo = new javax.swing.JPanel();
-        draw1 = new javax.swing.JButton();
-        draw2 = new javax.swing.JButton();
-        hieu_ung1 = new javax.swing.JButton();
+        color = new javax.swing.JButton();
+        infor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,33 +124,20 @@ public class Hinh2D extends javax.swing.JFrame {
             .addGap(0, 558, Short.MAX_VALUE)
         );
 
-        draw1.setBackground(new java.awt.Color(255, 255, 255));
-        draw1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        draw1.setForeground(new java.awt.Color(204, 0, 0));
-        draw1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/color.png"))); // NOI18N
-        draw1.addActionListener(new java.awt.event.ActionListener() {
+        color.setBackground(new java.awt.Color(255, 255, 255));
+        color.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        color.setForeground(new java.awt.Color(204, 0, 0));
+        color.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/color.png"))); // NOI18N
+        color.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                draw1ActionPerformed(evt);
+                colorActionPerformed(evt);
             }
         });
 
-        draw2.setBackground(new java.awt.Color(255, 255, 255));
-        draw2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        draw2.setForeground(new java.awt.Color(204, 0, 0));
-        draw2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/brushCursor2.png"))); // NOI18N
-        draw2.addActionListener(new java.awt.event.ActionListener() {
+        infor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/infoCursor.png"))); // NOI18N
+        infor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                draw2ActionPerformed(evt);
-            }
-        });
-
-        hieu_ung1.setBackground(new java.awt.Color(255, 255, 255));
-        hieu_ung1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        hieu_ung1.setForeground(new java.awt.Color(255, 0, 0));
-        hieu_ung1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/move342.png"))); // NOI18N
-        hieu_ung1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hieu_ung1ActionPerformed(evt);
+                inforActionPerformed(evt);
             }
         });
 
@@ -159,24 +146,23 @@ public class Hinh2D extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Panel_ToaDo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(draw1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(46, 46, 46)
+                        .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
                         .addComponent(draw, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
+                        .addGap(38, 38, 38)
                         .addComponent(hieu_ung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(draw2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(hieu_ung1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1))
@@ -190,9 +176,8 @@ public class Hinh2D extends javax.swing.JFrame {
                     .addComponent(hieu_ung, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lam_moi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(draw1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(draw2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hieu_ung1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,37 +203,23 @@ public class Hinh2D extends javax.swing.JFrame {
 
     
     //========================================================================//
-    //static int click=-1;
-    //public Point[] points = new Point[2];
     public Color choosecolor;
     public Point point1,point2,point3,point4 ,point5,point6,point7,
             point8,point9,point10,point11,point12,point13,point14,
-            point15,point16,point17,point18,point19, point20, point21,
-            point22, point23,point24, point25, point26, point27,
-            point28,point29,point30,point31,point32,point33,point34,
-            point35,point36,point37,point38,point39,point40,point41,
+            point15,point16,point17,point18,point19,point20,
             pointcc1,pointcc2,pointcc3,pointcc4,pointcc5,pointcc6,
             pointcc7,pointcc8,pointtru,pointtrucc,pointmt;
     
     public Dthang dt1, dt2  ,dt3, dt4, dt5,dt6,dt7,dt8,dt9,dt10,dt11,
-            dt12,dt13,dt14,dt15,dt16,dt17,dt18,dt19,dt20,dt21,dt22,
-            dt23,dt24,dt25,dt26,dt27,dt28,dt29,dt30,dt31,dt32,
+            dt12,dt13,dt14,
             dtcc1,dtcc2,dtcc3,dtcc4,dtcc5,dtcc6,dtcc7,dtcc8,dttru;
     
-    public Htron ht1,ht2,ht3,ht4,ht5,ht6,htmt;
+    public Htron ht1,ht2,ht3,ht4,htmt;
 
-    public Elip el1, el2, el3, el4;
-    
     double sin45 = Math.sin(-10);
     double cos45 = Math.cos(-10);
     
     DoiToaDo doitoado = new DoiToaDo();
-//    public Dthang[] lines;
-//    public Htron[] circles ;
-//    public Hvuong[] squares;
-//    public Hcn[] rectangles;
-//    public Elip[] elippses;
-//    public Hbh[] hinhbhs;
     
     //========================================================================//
     //===HÀM CON===//
@@ -359,152 +330,6 @@ public class Hinh2D extends javax.swing.JFrame {
         }
     }
     
-    public void Midpoint_elip(Elip T) {
-        DoiToaDo doitoado = new DoiToaDo();
-        int x, y, pointx, pointy, R, r;
-        pointx = T.point.x;
-        pointy = T.point.y;
-        R = T.R;
-        r = T.r;
-        Color m = T.mau;
-        x = 0;
-        y = r;
-        int A, B;
-        A = R * R;
-        B = r * r;
-        double p = B + A / 4 - A * r;
-        x = 0;
-        y = r;
-        int Dx = 0;
-        int Dy = 2 * A * y;
-        put4pitxel(x, y, pointx, pointy, m);
-
-        while (Dx < Dy) {
-            x++;
-            Dx += 2 * B;
-            if (p < 0) {
-                p += B + Dx;
-            } else {
-                y--;
-                Dy -= 2 * A;
-                p += B + Dx - Dy;
-            }
-            if (x % 5 == 0) {
-                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
-            }
-        }
-        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A * B);
-        while (y > 0) {
-            y--;
-            Dy -= A * 2;
-            if (p > 0) {
-                p += A - Dy;
-            } else {
-                x++;
-                Dx += B * 2;
-                p += A - Dy + Dx;
-            }
-            if (x % 5 == 0) {
-                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
-            }
-        }
-    }
-    
-    public void NetDut_Midpoint_elip(Elip T) {
-        int x, y, pointx, pointy, R, r;
-        int count=-1;
-        pointx = T.point.x;
-        pointy = T.point.y;
-        R = T.R;
-        r = T.r;
-        Color m = T.mau;
-        x = 0;
-        y = r;
-        int A, B;
-        A = R * R;
-        B = r * r;
-        double p = B + A / 4 - A * r;
-        x = 0;
-        y = r;
-        int Dx = 0;
-        int Dy = 2 * A * y;
-        put4pitxel(x, y, pointx, pointy, m);
-
-        while (Dx < Dy) {
-            x++;
-            Dx += 2 * B;
-            if (p < 0) {
-                p += B + Dx;
-            } else {
-                y--;
-                Dy -= 2 * A;
-                p += B + Dx - Dy;
-            }
-            if (x % 5 == 0 && ((-doitoado.round(y) + pointy)<270) && ((-doitoado.round(y) + pointy)<270) ) {
-//                putpixel(x + pointx, doitoado.round(y) + pointy, Color.WHITE);
-//                putpixel(-x + pointx, doitoado.round(y) + pointy, Color.WHITE);
-                
-                
-                putpixel(x + pointx, -doitoado.round(y) + pointy, T.mau );
-                putpixel(-x + pointx, -doitoado.round(y) + pointy,T.mau);
-                heToaDo();
-            }
-//            if(count < 4){
-//                m = T.mau;
-//            }else{
-//                m = Color.WHITE;
-//            }
-//            if(count % 10 == 0 && count!=0){
-//                count = -1;
-//            }
-//            count++;
-        }
-        p = Math.round(B * (x + 0.5f) * (x + 0.5f) + A * (y - 1) * (y - 1) - A * B);
-        while (y > 0) {
-            y--;
-            Dy -= A * 2;
-            if (p > 0) {
-                p += A - Dy;
-            } else {
-                x++;
-                Dx += B * 2;
-                p += A - Dy + Dx;
-            }
-            if (x % 5 == 0) {
-                put4pitxel(x, doitoado.round(y), pointx, pointy, m);
-            }
-        }
-    }
-    //15:47 21-5 jun
-    //tịnh tiến
-    
-    public Point Tinhtien(Point d1,int dx,int dy){// tinh tien sang diem moi
-
-            int x,y;
-            x=d1.x;y=d1.y;
-            double[][] matran1;
-            double[] mang;
-            mang = new double[3];
-            matran1 = new double[3][3];
-
-            //Ma tran cua phep tinh tien diem p theo vecter(dx,dy);
-            matran1[0][0] = 1; 
-            matran1[0][1] = 0; 
-            matran1[0][2] = 0;
-            matran1[1][0] = 0; 
-            matran1[1][1] = 1; 
-            matran1[1][2] = 0;
-            matran1[2][0] = dx; 
-            matran1[2][1] = dy; 
-            matran1[2][2] = 1;
-            mang[0] = x; 
-            mang[1] = y; 
-            mang[2] = 1;
-            Point pt2 = nhanMT2(matran1, mang);
-            Point kq = new Point(doitoado.round(pt2.x), doitoado.round(pt2.y));
-            return kq;
-    }
-    
     public Point nhanMT2(double[][]matran, double[] mang){
         double[] mangtam;
         mangtam = new double[3];
@@ -518,21 +343,6 @@ public class Hinh2D extends javax.swing.JFrame {
         }
         Point pt = new Point((int)(mangtam[0]), (int)(mangtam[1]));
         return pt;
-    }
-    
-    public void bd_tinhtien_dt_chanphai_tren1(int dx,int dy, Color color){
-         Dthang dt24 = new Dthang(point26, Tinhtien(point34, 10,-10), color);
-                line_DDA(dt24);  
-    }
-    
-    public void bd_tinhtien_dt_chanphai_tren2(int dx,int dy, Color color){
-        Dthang dt25 = new Dthang(Tinhtien(point34,10,-10), Tinhtien(point35, 10,-15), color);
-                line_DDA(dt25);
-    }
-    
-    public void bd_tinhtien_elip1(int dx, int dy, Color color){
-       Elip temp = new Elip(Tinhtien(point36, dx,dy), 10, 5, color);
-                Midpoint_elip(temp);
     }
        
     public Point Quay(Point point1,Point point2, int a){// Quay 1 diem (x,y)quanh diem(xo,yo)1 goc a;
@@ -581,232 +391,157 @@ public class Hinh2D extends javax.swing.JFrame {
             
             return kq;
         }
-    //15;47 21-5
+
 
     //=====các button===//
     //HIỆU ỨNG
     private void hieuUng_xe(int i){
         Color m = Color.WHITE;
-      //  for(int i=0; i<=700; i=i+20){
-             heToaDo();
-             //body xe
-             point5 = new Point(10+i, 350);
-             point6 = new Point(220+i, 350);
-             point7 = new Point(60+i, 350);
-             point8 = new Point(75+i, 330);
-             point9 = new Point(150+i, 330);
-             point10 = new Point(165+i, 350);
-             point11 = new Point(10+i, 380);
-             point12 = new Point(220+i, 380);
-             point13 = new Point(65+i,380);
-             point14 = new Point(145+i,380);
-             point15 = new Point(60+i, 380);
-             point16 = new Point(80+i, 380);
-             point17 = new Point(130+i, 380);
-             point18 = new Point(160+i, 380);
+        heToaDo();
+        //body xe
+        point5 = new Point(10+i, 350);
+        point6 = new Point(220+i, 350);
+        point7 = new Point(60+i, 350);
+        point8 = new Point(75+i, 330);
+        point9 = new Point(150+i, 330);
+        point10 = new Point(165+i, 350);
+        point11 = new Point(10+i, 380);
+        point12 = new Point(220+i, 380);
+        point13 = new Point(65+i,380);
+        point14 = new Point(145+i,380);
+        point15 = new Point(60+i, 380);
+        point16 = new Point(80+i, 380);
+        point17 = new Point(130+i, 380);
+        point18 = new Point(160+i, 380);
              
              
-             dt3 = new Dthang(point5, point6, choosecolor);
-             dt4 = new Dthang(point7, point8, choosecolor);
-             dt5 = new Dthang(point8, point9, choosecolor);
-             dt6 = new Dthang(point9, point10, choosecolor);
-             dt7 = new Dthang(point5, point11, choosecolor);
-             dt8 = new Dthang(point6, point12, choosecolor);
-             dt9 = new Dthang(point15, point11, choosecolor);
-             dt10 = new Dthang(point16, point17, choosecolor);
-             dt11 = new Dthang(point12, point18, choosecolor);
+        dt3 = new Dthang(point5, point6, choosecolor);
+        dt4 = new Dthang(point7, point8, choosecolor);
+        dt5 = new Dthang(point8, point9, choosecolor);
+        dt6 = new Dthang(point9, point10, choosecolor);
+        dt7 = new Dthang(point5, point11, choosecolor);
+        dt8 = new Dthang(point6, point12, choosecolor);
+        dt9 = new Dthang(point15, point11, choosecolor);
+        dt10 = new Dthang(point16, point17, choosecolor);
+        dt11 = new Dthang(point12, point18, choosecolor);
             
-             ht1 = new Htron(15,point13,choosecolor);
-             ht2 = new Htron(2,point13,choosecolor);
-             ht3 = new Htron(15,point14,choosecolor);
-             ht4 = new Htron(2,point14,choosecolor);
+        ht1 = new Htron(15,point13,choosecolor);
+        ht2 = new Htron(2,point13,choosecolor);
+        ht3 = new Htron(15,point14,choosecolor);
+        ht4 = new Htron(2,point14,choosecolor);
              
-             line_DDA(dt3);
-             line_DDA(dt4);
-             line_DDA(dt5);
-             line_DDA(dt6);
-             line_DDA(dt7);
-             line_DDA(dt8);
-             line_DDA(dt9);
-             line_DDA(dt10);
-             line_DDA(dt11);
+        line_DDA(dt3);
+        line_DDA(dt4);
+        line_DDA(dt5);
+        line_DDA(dt6);
+        line_DDA(dt7);
+        line_DDA(dt8);
+        line_DDA(dt9);
+        line_DDA(dt10);
+        line_DDA(dt11);
              
-             Midpoint_htron(ht1);
-             Midpoint_htron(ht2);
-             Midpoint_htron(ht3);
-             Midpoint_htron(ht4);
+        Midpoint_htron(ht1);
+        Midpoint_htron(ht2);
+        Midpoint_htron(ht3);
+        Midpoint_htron(ht4);
 
-             try {
+        try {
             Thread.sleep(100);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Hinh2D.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Hinh2D_1.class.getName()).log(Level.SEVERE, null, ex);
         }
-            //white
-             //body xe
-             point5 = new Point(10+i, 350);
-             point6 = new Point(220+i, 350);
-             point7 = new Point(60+i, 350);
-             point8 = new Point(75+i, 330);
-             point9 = new Point(150+i, 330);
-             point10 = new Point(165+i, 350);
-             point11 = new Point(10+i, 380);
-             point12 = new Point(220+i, 380);
-             point13 = new Point(65+i,380);
-             point14 = new Point(145+i,380);
-             point15 = new Point(60+i, 380);
-             point16 = new Point(80+i, 380);
-             point17 = new Point(130+i, 380);
-             point18 = new Point(160+i, 380);
+        //white
+        //body xe
+        dt3 = new Dthang(point5, point6, m);
+        dt4 = new Dthang(point7, point8, m);
+        dt5 = new Dthang(point8, point9, m);
+        dt6 = new Dthang(point9, point10, m);
+        dt7 = new Dthang(point5, point11, m);
+        dt8 = new Dthang(point6, point12, m);
+        dt9 = new Dthang(point15, point11, m);
+        dt10 = new Dthang(point16, point17, m);
+        dt11 = new Dthang(point12, point18, m);
              
+        ht1 = new Htron(15,point13,m);
+        ht2 = new Htron(2,point13,m);
+        ht3 = new Htron(15,point14,m);
+        ht4 = new Htron(2,point14,m);
              
-             dt3 = new Dthang(point5, point6, m);
-             dt4 = new Dthang(point7, point8, m);
-             dt5 = new Dthang(point8, point9, m);
-             dt6 = new Dthang(point9, point10, m);
-             dt7 = new Dthang(point5, point11, m);
-             dt8 = new Dthang(point6, point12, m);
-             dt9 = new Dthang(point15, point11, m);
-             dt10 = new Dthang(point16, point17, m);
-             dt11 = new Dthang(point12, point18, m);
-             
-             ht1 = new Htron(15,point13,m);
-             ht2 = new Htron(2,point13,m);
-             ht3 = new Htron(15,point14,m);
-             ht4 = new Htron(2,point14,m);
-             
-             line_DDA(dt3);
-             line_DDA(dt4);
-             line_DDA(dt5);
-             line_DDA(dt6);
-             line_DDA(dt7);
-             line_DDA(dt8);
-             line_DDA(dt9);
-             line_DDA(dt10);
-             line_DDA(dt11);
+        line_DDA(dt3);
+        line_DDA(dt4);
+        line_DDA(dt5);
+        line_DDA(dt6);
+        line_DDA(dt7);
+        line_DDA(dt8);
+        line_DDA(dt9);
+        line_DDA(dt10);
+        line_DDA(dt11);
             
-             Midpoint_htron(ht1);
-             Midpoint_htron(ht2);
-             Midpoint_htron(ht3);
-             Midpoint_htron(ht4);
-   
-     //   }  
+        Midpoint_htron(ht1);
+        Midpoint_htron(ht2);
+        Midpoint_htron(ht3);
+        Midpoint_htron(ht4); 
     }
   
     private void hieuUng_chongChong(){
         Color m = Color.WHITE;
         heToaDo();
-            dtcc1 = new Dthang (pointcc1, pointcc5, Color.BLUE);
-            dtcc2 = new Dthang (pointcc3, pointcc7, Color.BLUE);
-            dtcc3 = new Dthang (pointcc2, pointcc6, Color.BLUE);
-            dtcc4 = new Dthang (pointcc4, pointcc8, Color.BLUE);
-            dtcc5 = new Dthang (pointcc1, pointcc2, Color.BLUE);
-            dtcc6 = new Dthang (pointcc3, pointcc4, Color.BLUE);
-            dtcc7 = new Dthang (pointcc5, pointcc6, Color.BLUE);
-            dtcc8 = new Dthang (pointcc7, pointcc8, Color.BLUE);
+        dtcc1 = new Dthang (pointcc1, pointcc5, Color.BLUE);
+        dtcc2 = new Dthang (pointcc3, pointcc7, Color.BLUE);
+        dtcc3 = new Dthang (pointcc2, pointcc6, Color.BLUE);
+        dtcc4 = new Dthang (pointcc4, pointcc8, Color.BLUE);
+        dtcc5 = new Dthang (pointcc1, pointcc2, Color.BLUE);
+        dtcc6 = new Dthang (pointcc3, pointcc4, Color.BLUE);
+        dtcc7 = new Dthang (pointcc5, pointcc6, Color.BLUE);
+        dtcc8 = new Dthang (pointcc7, pointcc8, Color.BLUE);
 
-            line_DDA(dtcc1);
-            line_DDA(dtcc2);
-            line_DDA(dtcc3);
-            line_DDA(dtcc4);
-            line_DDA(dtcc5);
-            line_DDA(dtcc6);
-            line_DDA(dtcc7);
-            line_DDA(dtcc8);
+        line_DDA(dtcc1);
+        line_DDA(dtcc2);
+        line_DDA(dtcc3);
+        line_DDA(dtcc4);
+        line_DDA(dtcc5);
+        line_DDA(dtcc6);
+        line_DDA(dtcc7);
+        line_DDA(dtcc8);
             
         try {
             Thread.sleep(200);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Hinh2D.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Hinh2D_1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
             /////
-            dtcc1 = new Dthang (pointcc1, pointcc5, m);
-            dtcc2 = new Dthang (pointcc3, pointcc7, m);
-            dtcc3 = new Dthang (pointcc2, pointcc6, m);
-            dtcc4 = new Dthang (pointcc4, pointcc8, m);
-            dtcc5 = new Dthang (pointcc1, pointcc2, m);
-            dtcc6 = new Dthang (pointcc3, pointcc4, m);
-            dtcc7 = new Dthang (pointcc5, pointcc6, m);
-            dtcc8 = new Dthang (pointcc7, pointcc8, m);
+        dtcc1 = new Dthang (pointcc1, pointcc5, m);
+        dtcc2 = new Dthang (pointcc3, pointcc7, m);
+        dtcc3 = new Dthang (pointcc2, pointcc6, m);
+        dtcc4 = new Dthang (pointcc4, pointcc8, m);
+        dtcc5 = new Dthang (pointcc1, pointcc2, m);
+        dtcc6 = new Dthang (pointcc3, pointcc4, m);
+        dtcc7 = new Dthang (pointcc5, pointcc6, m);
+        dtcc8 = new Dthang (pointcc7, pointcc8, m);
 
             
-            line_DDA(dtcc1);
-            line_DDA(dtcc2);
-            line_DDA(dtcc3);
-            line_DDA(dtcc4);
-            line_DDA(dtcc5);
-            line_DDA(dtcc6);
-            line_DDA(dtcc7);
-            line_DDA(dtcc8);
-            line_DDA(dttru);
+        line_DDA(dtcc1);
+        line_DDA(dtcc2);
+        line_DDA(dtcc3);
+        line_DDA(dtcc4);
+        line_DDA(dtcc5);
+        line_DDA(dtcc6);
+        line_DDA(dtcc7);
+        line_DDA(dtcc8);
+        line_DDA(dttru);
             
-            pointcc1=Quay(pointcc1, pointtrucc,10);
-            pointcc2=Quay(pointcc2, pointtrucc,10);
-            pointcc3=Quay(pointcc3, pointtrucc,10);
-            pointcc4=Quay(pointcc4, pointtrucc,10);
-            pointcc5=Quay(pointcc5, pointtrucc,10);
-            pointcc6=Quay(pointcc6, pointtrucc,10);
-            pointcc7=Quay(pointcc7, pointtrucc,10);
-            pointcc8=Quay(pointcc8, pointtrucc,10);
-            heToaDo();
-           
+        pointcc1=Quay(pointcc1, pointtrucc,10);
+        pointcc2=Quay(pointcc2, pointtrucc,10);
+        pointcc3=Quay(pointcc3, pointtrucc,10);
+        pointcc4=Quay(pointcc4, pointtrucc,10);
+        pointcc5=Quay(pointcc5, pointtrucc,10);
+        pointcc6=Quay(pointcc6, pointtrucc,10);
+        pointcc7=Quay(pointcc7, pointtrucc,10);
+        pointcc8=Quay(pointcc8, pointtrucc,10);
+        heToaDo();    
     }
-    //21-5 jun v
-    private void hieuUng_sut(){
-       Color m = Color.BLACK;
 
-        bd_tinhtien_dt_chanphai_tren1(210,405,m);
-        bd_tinhtien_dt_chanphai_tren2(235,455,m);
-        bd_tinhtien_elip1(10,-15,m);
-        
-        
-        dt24 = new Dthang(point26, point34, Color.WHITE);
-        line_DDA(dt24);
-        dt25 = new Dthang(point34, point35, Color.WHITE);
-        line_DDA(dt25);
-        el2 = new Elip(point36, 10, 5, Color.WHITE);
-        Midpoint_elip(el2);
-        
-        heToaDo();
-        
-        try {
-            Thread.sleep(600);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Hinh2D.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        bd_tinhtien_dt_chanphai_tren1(210,405,Color.WHITE);
-        bd_tinhtien_dt_chanphai_tren2(235,455,Color.WHITE);
-        bd_tinhtien_elip1(10,-15,Color.WHITE);
-
-        heToaDo();
-        
-        dt24 = new Dthang(point26, point34, choosecolor);
-        line_DDA(dt24);
-        dt25 = new Dthang(point34, point35, choosecolor);
-        line_DDA(dt25);
-        el2 = new Elip(point36, 10, 5, choosecolor);
-        Midpoint_elip(el2);
-        
-    }
-    
-    private void hieuUng_ball(){
-        int i=0;
-        for(i=0; i<380; i=i+10){
-            Ball(i,i,choosecolor);
-            
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Hinh2D.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            Ball(i,i,Color.WHITE); 
-            heToaDo();
-        }
-        Ball(i,i,choosecolor);
-    }
-    //21-5 jun ^
     private void hieu_ungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ungActionPerformed
         int i=0;
         while(i<=700){
@@ -815,8 +550,6 @@ public class Hinh2D extends javax.swing.JFrame {
             hieuUng_chongChong(); 
             i=i+40;
         }
-            
-      
         xe();
         chongchong();
     }//GEN-LAST:event_hieu_ungActionPerformed
@@ -949,29 +682,29 @@ public class Hinh2D extends javax.swing.JFrame {
     }
     
     private void nui(){
-//        point18 = new Point(196, 105);
-//        point19 = new Point(309, 268);
-//        point20 = new Point(505, 105);
-//        
-//        dt11 = new Dthang(point3, point18, Color.GREEN);
-//        dt12 = new Dthang(point19, point18, Color.GREEN);
-//        dt13 = new Dthang(point19, point20, Color.GREEN);
-//        dt14 = new Dthang(point4, point20, Color.GREEN);
-//        
-//        line_DDA(dt11);
-//        line_DDA(dt12);
-//        line_DDA(dt13);
-//        line_DDA(dt14);
-//        
+        point18 = new Point(196, 105);
+        point19 = new Point(309, 268);
+        point20 = new Point(505, 105);
+        
+        dt11 = new Dthang(point3, point18, Color.GREEN);
+        dt12 = new Dthang(point19, point18, Color.GREEN);
+        dt13 = new Dthang(point19, point20, Color.GREEN);
+        dt14 = new Dthang(point4, point20, Color.GREEN);
+        
+        line_DDA(dt11);
+        line_DDA(dt12);
+        line_DDA(dt13);
+        line_DDA(dt14);
+        
 //        Graphics2D graphic = (Graphics2D) Panel_ToaDo.getGraphics();
 //        graphic.setPaint(Color.GREEN);
 //        graphic.fill(new Ellipse2D.Double(120, 147, 120, 120));
 //        
 //        graphic.setPaint(Color.GREEN);
 //        graphic.fill(new Rectangle2D.Double(430, 180, 160, 80));
-       point18 = new Point(152, 270);
-       el3 = new Elip(point18,152,100,Color.blue);
-        NetDut_Midpoint_elip(el3);
+//       point18 = new Point(152, 270);
+//       el3 = new Elip(point18,152,100,Color.blue);
+//        NetDut_Midpoint_elip(el3);
             
     }
     
@@ -1002,101 +735,15 @@ public class Hinh2D extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_ToaDoMouseClicked
 
     //Chọn màu
-    private void draw1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draw1ActionPerformed
+    private void colorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colorActionPerformed
         heToaDo();
         choosecolor = JColorChooser.showDialog(this, "Bảng Màu ", Color.GREEN);
-    }//GEN-LAST:event_draw1ActionPerformed
+    }//GEN-LAST:event_colorActionPerformed
 
-    //VẼ HÌNH 2
-    private void Header(){
-        point24 = new Point (160,300);
-        ht5 = new Htron(30,point24,choosecolor);
-        Midpoint_htron(ht5);
-    }
-    
-    private void Body(){
-        //thanh nguoi
-        point25 = new Point (160,330);
-        point26 = new Point (160,380);
-        dt17 = new Dthang (point25,point26, choosecolor);
-        line_DDA(dt17);
-        //tay trai
-        point27 = new Point (120,350);
-        dt18 = new Dthang (point25,point27,choosecolor);
-        line_DDA(dt18);
-        point28 = new Point (145,365);
-        dt19 = new Dthang (point27,point28,choosecolor );
-        line_DDA(dt19);
-        //tay phai
-        point29 = new Point (180,350);
-        dt20 = new Dthang(point25, point29, choosecolor);
-        line_DDA(dt20);
-        point30 = new Point (200,330);
-        dt21 = new Dthang( point29, point30, choosecolor);
-        line_DDA(dt21);
-        //chantrai
-        point31 = new Point (180,430);
-        dt22 = new Dthang(point26, point31, choosecolor);
-        line_DDA(dt22);
-        point32 = new Point (160,480);
-        dt23 = new Dthang(point31, point32, choosecolor);
-        line_DDA(dt23);
-        point33 = new Point (170,480);
-        el1 = new Elip(point33, 10, 5, choosecolor);
-        Midpoint_elip(el1);
-        //chan phai
-        point34 = new Point (210,405);
-        dt24 = new Dthang(point26, point34, choosecolor);
-        line_DDA(dt24);
-        point35 = new Point (235,455);
-        dt25 = new Dthang(point34, point35, choosecolor);
-        line_DDA(dt25);
-        point36 = new Point (245,455);
-        el2 = new Elip(point36, 10, 5, choosecolor);
-        Midpoint_elip(el2);
+    //hiển thị thông tin
+    private void inforActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inforActionPerformed
         
-        
-       
-    }
-    
-    private void Goal(){
-       // cot doc tren
-       point37 = new Point(450, 10);
-       point38 = new Point(450, 70);
-       dt26 = new Dthang(point37, point38, choosecolor);
-       line_DDA(dt26); 
-       //cot doc duoi
-       point39 = new Point(699, 10);
-       point40 = new Point(699, 70);
-       dt27 = new Dthang(point39, point40, choosecolor);
-       line_DDA(dt27); 
-       //cot ngang
-       dt28 = new Dthang(point37, point39, choosecolor);
-       line_DDA(dt28);
-    }
-    
-    private void Ball(int x, int y, Color color){
-        point41 = new Point (280+x,435-y);
-        ht6 = new Htron(20,point41,color);
-        Midpoint_htron(ht6);
-    }
-    
-    //VẼ HÌNH 2
-    private void draw2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_draw2ActionPerformed
-        heToaDo();
-        Header();
-        Body();
-        Goal();
-        Ball(0,0,choosecolor);   
-    }//GEN-LAST:event_draw2ActionPerformed
-
-    //HIỆU ỨNG 2
-    private void hieu_ung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hieu_ung1ActionPerformed
-         //21-5 jun  v
-            hieuUng_sut();
-            hieuUng_ball();
-        //21-5 jun   ^
-    }//GEN-LAST:event_hieu_ung1ActionPerformed
+    }//GEN-LAST:event_inforActionPerformed
 
    //========================================================================//
     
@@ -1116,21 +763,22 @@ public class Hinh2D extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Hinh2D.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hinh2D_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Hinh2D.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hinh2D_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Hinh2D.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hinh2D_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Hinh2D.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hinh2D_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                new Hinh2D().setVisible(true);
+                new Hinh2D_1().setVisible(true);
             }
         });
         
@@ -1138,11 +786,10 @@ public class Hinh2D extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel_ToaDo;
+    private javax.swing.JButton color;
     private javax.swing.JButton draw;
-    private javax.swing.JButton draw1;
-    private javax.swing.JButton draw2;
     private javax.swing.JButton hieu_ung;
-    private javax.swing.JButton hieu_ung1;
+    private javax.swing.JButton infor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;

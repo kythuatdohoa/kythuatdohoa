@@ -17,6 +17,7 @@ public class DrawCube{
     double HESO = Math.sqrt(2)/2;
     public  DrawCube(Color choosecolor, int X, int Y, int Z, int L, int W, int H){
 
+        X*=5; Y*=5; Z*=5; L*=5; W*=5; H*=5;
         //point 
         point1 = new Point((int)(X - HESO*Z), (int)(Y - HESO*Z));
         point2 = new Point((int)(X -HESO*Z), (int)(Y + W - HESO*Z));
