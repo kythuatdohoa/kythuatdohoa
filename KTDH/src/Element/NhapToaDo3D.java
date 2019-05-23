@@ -62,9 +62,9 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                 }                     
             }
         });
@@ -95,9 +95,9 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                 }                     
             }
         });
@@ -128,14 +128,14 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                 }                     
             }
         });
         //=====txtL=====//
-        JLabel lblL = new JLabel("Chiều dài  L/R  : ");
+        JLabel lblL = new JLabel("Chiều dài/ Bán kính  : ");
         txtL = new JTextField();
         
         txtL.addKeyListener(new KeyAdapter() {
@@ -158,9 +158,9 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtL.getText().length() == 0){
                         txtL.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     } 
@@ -169,7 +169,7 @@ public class NhapToaDo3D extends JFrame {
         });
         
         //=====txtW=====//
-        JLabel lblW = new JLabel("Chiều rộng  W/r   : ");
+        JLabel lblW = new JLabel("Chiều rộng (đ/v hình hộp)   : ");
         txtW = new JTextField();
         
         txtW.addKeyListener(new KeyAdapter() {
@@ -193,9 +193,9 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtL.getText().length() == 0){
                         txtL.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     } 
@@ -228,9 +228,9 @@ public class NhapToaDo3D extends JFrame {
                     else if(txtL.getText().length() == 0){
                         txtL.requestFocus();
                     }
-                    else if(txtW.getText().length() == 0){
-                            txtW.requestFocus();
-                    }
+//                    else if(txtW.getText().length() == 0){
+//                            txtW.requestFocus();
+//                    }
                     else if(txtH.getText().length() == 0){
                             txtH.requestFocus();
                     }
@@ -240,23 +240,23 @@ public class NhapToaDo3D extends JFrame {
         });
         
         //====thêm các chức năng vào Panel======//
-        contentPane.add(lblX).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtX).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblX).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtX).setPreferredSize(new Dimension(70, 30));
         
-        contentPane.add(lblY).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtY).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblY).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtY).setPreferredSize(new Dimension(70, 30));
         
-        contentPane.add(lblZ).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtZ).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblZ).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtZ).setPreferredSize(new Dimension(70, 30));
         
-        contentPane.add(lblL).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtL).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblL).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtL).setPreferredSize(new Dimension(70, 30));
         
-        contentPane.add(lblW).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtW).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblW).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtW).setPreferredSize(new Dimension(70, 30));
         
-        contentPane.add(lblH).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtH).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblH).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtH).setPreferredSize(new Dimension(70, 30));
         
         contentPane.add(btnDraw).setPreferredSize(new Dimension(100, 30));  
         
@@ -276,9 +276,9 @@ public class NhapToaDo3D extends JFrame {
                 else if(txtL.getText().length() == 0){
                     txtL.requestFocus();
                 }
-                else if(txtW.getText().length() == 0){
-                    txtW.requestFocus();
-                }
+//                else if(txtW.getText().length() == 0){
+//                    txtW.requestFocus();
+//                }
                 else if(txtH.getText().length() == 0){
                     txtH.requestFocus();
                 }
@@ -287,7 +287,12 @@ public class NhapToaDo3D extends JFrame {
                     Y = Integer.parseInt(txtY.getText());
                     Z = Integer.parseInt(txtZ.getText());
                     L = Integer.parseInt(txtL.getText());
-                    W = Integer.parseInt(txtW.getText());
+                    if(txtW.getText().length() == 0){
+                        W=0;
+                    }else{
+                         W = Integer.parseInt(txtW.getText());
+                    }
+                   
                     H = Integer.parseInt(txtH.getText());  
                     new DrawCube(choosecolor, X, Y, Z, L, W, H);
                     new DrawPyramid(choosecolor, X, Y, Z, L, W, H);

@@ -47,12 +47,17 @@ public class HienThiThongTIn extends JFrame {
         JLabel lbl8 = new JLabel("ĐIỂM THỨ 8 : ");
         JTextField txt8 = new JTextField("(   "+NhapToaDo3D.X+" ,"+(NhapToaDo3D.Y+NhapToaDo3D.H)+" ,"+(NhapToaDo3D.Z+NhapToaDo3D.W)+"   )");
         
-        JLabel lblL = new JLabel("CHIỀU DÀI : ");
+        JLabel lblL = new JLabel("CHIỀU DÀI (bán kính) : ");
         JTextField txtL = new JTextField(": "+NhapToaDo3D.L);
         
-        JLabel lblW = new JLabel("CHIỀU RỘNG : ");
-        JTextField txtW = new JTextField(": "+NhapToaDo3D.W);
-        
+        JLabel lblW = new JLabel("CHIỀU RỘNG (đ/v h.hộp) : ");
+        JTextField txtW;
+        if(NhapToaDo3D.W==0){
+           txtW = new JTextField(": x");
+        }else{
+            txtW = new JTextField(": "+NhapToaDo3D.W);
+        }
+
         JLabel lblH = new JLabel("CHIỀU CAO : ");
         JTextField txtH = new JTextField(": "+NhapToaDo3D.H);
         
@@ -82,11 +87,11 @@ public class HienThiThongTIn extends JFrame {
         contentPane.add(lbl8).setPreferredSize(new Dimension(100, 30));
         contentPane.add(txt8).setPreferredSize(new Dimension(120, 30));
         //L
-        contentPane.add(lblL).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtL).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblL).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtL).setPreferredSize(new Dimension(70, 30));
         //W
-        contentPane.add(lblW).setPreferredSize(new Dimension(100, 30));
-        contentPane.add(txtW).setPreferredSize(new Dimension(120, 30));
+        contentPane.add(lblW).setPreferredSize(new Dimension(150, 30));
+        contentPane.add(txtW).setPreferredSize(new Dimension(70, 30));
         //H
         contentPane.add(lblH).setPreferredSize(new Dimension(100, 30));
         contentPane.add(txtH).setPreferredSize(new Dimension(120, 30));
