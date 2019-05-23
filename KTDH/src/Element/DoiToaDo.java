@@ -32,7 +32,7 @@ public class DoiToaDo {
      
     public Point doiMtoND(int x, int y){
         Point temp = new Point();
-        temp.x = x - 415;
+        temp.x = x - 350;
         temp.y = (y - 300) * (-1);
 
         return temp;
@@ -40,7 +40,7 @@ public class DoiToaDo {
      
     public Point NDtoM(int x, int y){
         Point temp = new Point();
-        temp.x = x + 415;
+        temp.x = x + 350;
         temp.y = y* (-1) + 300 ;
 
         return temp;
