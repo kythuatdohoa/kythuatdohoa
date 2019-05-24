@@ -1,7 +1,7 @@
 
 package Element;
 
-import Element.DoiToaDo;
+import Element.DoiToaDo_3D;
 import Element.Dthang;
 import Element.Elip;
 import java.awt.Color;
@@ -15,7 +15,7 @@ public class DrawCylinder {
     public static Point point1, point2, point3, point4, point5, point6;
     public static Dthang dt1, dt2, dt3, dt4, dt5;
     public static Elip elip1, elip2;
-    DoiToaDo doitoado = new DoiToaDo();
+    DoiToaDo_3D doitoado = new DoiToaDo_3D();
     double HESO = Math.sqrt(2)/2;
     public  DrawCylinder(Color choosecolor, int X, int Y, int Z, int L, int W, int H){
 

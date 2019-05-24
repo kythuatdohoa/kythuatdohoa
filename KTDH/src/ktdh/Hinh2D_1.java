@@ -3,7 +3,6 @@ package ktdh;
 
 import Element.DoiToaDo;
 import Element.Dthang;
-import Element.Elip;
 import Element.Htron; 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -14,7 +13,6 @@ import java.awt.geom.Rectangle2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JColorChooser;
-//import Element.POINT;
 
 /**
  *
@@ -60,9 +58,6 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        x1 = new javax.swing.JTextField();
-        x2 = new javax.swing.JTextField();
-        x3 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -74,6 +69,9 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         cc3 = new javax.swing.JTextField();
         cc2 = new javax.swing.JTextField();
         cc1 = new javax.swing.JTextField();
+        x1 = new javax.swing.JTextField();
+        x2 = new javax.swing.JTextField();
+        x3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -224,12 +222,6 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Điểm 3");
 
-        x1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        x2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        x3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(204, 0, 0));
         jLabel19.setText("Chong Chóng");
@@ -263,11 +255,12 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         cc2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         cc1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cc1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cc1ActionPerformed(evt);
-            }
-        });
+
+        x1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        x2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        x3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -297,20 +290,6 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                                     .addComponent(jLabel12)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(bx1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel15)
-                                        .addComponent(jLabel14)
-                                        .addComponent(jLabel16))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(x3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(x1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(x2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel13)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(bx2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +308,19 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                                             .addComponent(jLabel20)
                                             .addGap(28, 28, 28)
                                             .addComponent(cc1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jLabel19)))))
+                                        .addComponent(jLabel19)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel13)
+                                        .addComponent(jLabel15)
+                                        .addComponent(jLabel16)
+                                        .addComponent(jLabel14))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(x1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(bx2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(x2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(x3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7)
@@ -390,13 +381,13 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                     .addComponent(x1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(x2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel15)
+                    .addComponent(x2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(x3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel16)
+                    .addComponent(x3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -419,7 +410,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cc5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -481,9 +472,11 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     
     //========================================================================//
     public Color choosecolor;
-    public static Point point1,point2,point3,point4 ,point5,point6,point7,
-            point8,point9,point10,point11,point12,point13,point14,
-            point15,point16,point17,point18,point19,point20,point21,
+    
+    public static Point point1,point2,point3,point4 
+            ,point5,point6,point7,point8,point9,point10,point11,point12,point13,point14,
+            point15,point16,point17,point18
+            ,point19,point20,point21,
             pointcc1,pointcc2,pointcc3,pointcc4,pointcc5,pointcc6,
             pointcc7,pointcc8,pointtru,pointtrucc,pointmt;
     
@@ -676,7 +669,6 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     //=====các button===//
     //HIỆU ỨNG
     private void hieuUng_xe(int i){
-       
         Color m = Color.WHITE;
         heToaDo();
         //body xe
@@ -696,20 +688,20 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         point18 = new Point(160+i, 380);
         
              
-        dt3 = new Dthang(point5, point6, choosecolor);
-        dt4 = new Dthang(point7, point8, choosecolor);
-        dt5 = new Dthang(point8, point9, choosecolor);
-        dt6 = new Dthang(point9, point10, choosecolor);
-        dt7 = new Dthang(point5, point11, choosecolor);
-        dt8 = new Dthang(point6, point12, choosecolor);
-        dt9 = new Dthang(point15, point11, choosecolor);
-        dt10 = new Dthang(point16, point17, choosecolor);
-        dt11 = new Dthang(point12, point18, choosecolor);
+        dt3 = new Dthang(point5, point6, Color.MAGENTA);
+        dt4 = new Dthang(point7, point8, Color.MAGENTA);
+        dt5 = new Dthang(point8, point9, Color.MAGENTA);
+        dt6 = new Dthang(point9, point10, Color.MAGENTA);
+        dt7 = new Dthang(point5, point11, Color.MAGENTA);
+        dt8 = new Dthang(point6, point12, Color.MAGENTA);
+        dt9 = new Dthang(point15, point11, Color.MAGENTA);
+        dt10 = new Dthang(point16, point17, Color.MAGENTA);
+        dt11 = new Dthang(point12, point18, Color.MAGENTA);
             
-        ht1 = new Htron(15,point13,choosecolor);
-        ht2 = new Htron(2,point13,choosecolor);
-        ht3 = new Htron(15,point14,choosecolor);
-        ht4 = new Htron(2,point14,choosecolor);
+        ht1 = new Htron(15,point13,Color.BLACK);
+        ht2 = new Htron(2,point13,Color.MAGENTA);
+        ht3 = new Htron(15,point14,Color.BLACK);
+        ht4 = new Htron(2,point14,Color.MAGENTA);
              
         line_DDA(dt3);
         line_DDA(dt4);
@@ -761,8 +753,21 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         Midpoint_htron(ht1);
         Midpoint_htron(ht2);
         Midpoint_htron(ht3);
-        Midpoint_htron(ht4); 
+        Midpoint_htron(ht4);
         
+        //xuat
+//        bx1.setText("          ");
+//        bx2.setText("          ");
+//        x1.setText("          ");
+//        x2.setText("          ");
+//        x3.setText("          ");
+//
+//        bx1.setText("( "+doitoado.doiMtoND(point13.x, point13.y).x+" ,"+doitoado.doiMtoND(point13.x, point13.y).y+" )");
+//        bx2.setText("( "+doitoado.doiMtoND(point14.x, point14.y).x+" ,"+doitoado.doiMtoND(point14.x, point14.y).y+" )");
+//        x1.setText("( "+doitoado.doiMtoND(point5.x, point5.y).x+" ,"+doitoado.doiMtoND(point5.x, point5.y).y+" )");
+//        x2.setText("( "+doitoado.doiMtoND(point7.x, point7.y).x+" ,"+doitoado.doiMtoND(point7.x, point7.y).y+" )");
+//        x3.setText("( "+doitoado.doiMtoND(point8.x, point8.y).x+" ,"+doitoado.doiMtoND(point8.x, point8.y).y+" )");
+
         
     }
   
@@ -838,6 +843,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         }
         xe();
         chongchong();     
+        
     }//GEN-LAST:event_hieu_ungActionPerformed
 
     //LÀM MỚI
@@ -867,6 +873,7 @@ public class Hinh2D_1 extends javax.swing.JFrame {
     
     private void xe(){
         //body xe
+
         point5 = new Point(10, 350);
         point6 = new Point(220, 350);
         point7 = new Point(60, 350);
@@ -882,20 +889,20 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         point17 = new Point(130, 380);
         point18 = new Point(160, 380);
         
-        dt3 = new Dthang(point5, point6, choosecolor);
-        dt4 = new Dthang(point7, point8, choosecolor);
-        dt5 = new Dthang(point8, point9, choosecolor);
-        dt6 = new Dthang(point9, point10, choosecolor);
-        dt7 = new Dthang(point5, point11, choosecolor);
-        dt8 = new Dthang(point6, point12, choosecolor);
-        dt9 = new Dthang(point15, point11, choosecolor);
-        dt10 = new Dthang(point16, point17, choosecolor);
-        dt11 = new Dthang(point12, point18, choosecolor);
+        dt3 = new Dthang(point5, point6, Color.MAGENTA);
+        dt4 = new Dthang(point7, point8, Color.MAGENTA);
+        dt5 = new Dthang(point8, point9, Color.MAGENTA);
+        dt6 = new Dthang(point9, point10, Color.MAGENTA);
+        dt7 = new Dthang(point5, point11, Color.MAGENTA);
+        dt8 = new Dthang(point6, point12, Color.MAGENTA);
+        dt9 = new Dthang(point15, point11, Color.MAGENTA);
+        dt10 = new Dthang(point16, point17, Color.MAGENTA);
+        dt11 = new Dthang(point12, point18, Color.MAGENTA);
         
-        ht1 = new Htron(15,point13,choosecolor);
-        ht2 = new Htron(2,point13,choosecolor);
-        ht3 = new Htron(15,point14,choosecolor);
-        ht4 = new Htron(2,point14,choosecolor);
+        ht1 = new Htron(15,point13,Color.BLACK);
+        ht2 = new Htron(2,point13,Color.MAGENTA);
+        ht3 = new Htron(15,point14,Color.BLACK);
+        ht4 = new Htron(2,point14,Color.MAGENTA);
         
         line_DDA(dt3);
         line_DDA(dt4);
@@ -913,17 +920,19 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         Midpoint_htron(ht4);  
         
         //xuất
-        bx1.setText("          ");
-        bx2.setText("          ");
-        x1.setText("          ");
-        x2.setText("          ");
-        x3.setText("          ");
+//        bx1.setText("          ");
+//        bx2.setText("          ");
+//        x1.setText("          ");
+//        x2.setText("          ");
+//        x3.setText("          ");
         
+       // System.out.println(doitoado.doiMtoND(point13.x, point13.y).x+", "+doitoado.doiMtoND(point13.x, point13.y).y);
         bx1.setText("( "+doitoado.doiMtoND(point13.x, point13.y).x+" ,"+doitoado.doiMtoND(point13.x, point13.y).y+" )");
         bx2.setText("( "+doitoado.doiMtoND(point14.x, point14.y).x+" ,"+doitoado.doiMtoND(point14.x, point14.y).y+" )");
         x1.setText("( "+doitoado.doiMtoND(point5.x, point5.y).x+" ,"+doitoado.doiMtoND(point5.x, point5.y).y+" )");
         x2.setText("( "+doitoado.doiMtoND(point7.x, point7.y).x+" ,"+doitoado.doiMtoND(point7.x, point7.y).y+" )");
         x3.setText("( "+doitoado.doiMtoND(point8.x, point8.y).x+" ,"+doitoado.doiMtoND(point8.x, point8.y).y+" )");
+
     }
     
     private void chongchong(){
@@ -1041,10 +1050,6 @@ public class Hinh2D_1 extends javax.swing.JFrame {
         heToaDo();
         choosecolor = JColorChooser.showDialog(this, "Bảng Màu ", Color.GREEN);
     }//GEN-LAST:event_colorActionPerformed
-
-    private void cc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cc1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cc1ActionPerformed
 
    //========================================================================//
     

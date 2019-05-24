@@ -1,6 +1,7 @@
 package ktdh;
 
 import Element.DoiToaDo;
+import Element.DoiToaDo_3D;
 import Element.DrawCylinder;
 import Element.DrawCube;
 import Element.DrawPyramid;
@@ -175,7 +176,7 @@ public class Hinh3D extends javax.swing.JFrame {
     //============================================================================//
     //======o0o==KHAI BÁO==o0o=========//
     public Color choosecolor;
-    DoiToaDo doitoado = new DoiToaDo();
+    DoiToaDo_3D doitoado = new DoiToaDo_3D();
     Color[][] arrcolor = new Color[165][115];
 
     //======o0o==HÀM CON==o0o=========//

@@ -3,7 +3,7 @@ package Element;
 
 import java.awt.Color;
 import java.awt.Point;
-import Element.DoiToaDo; 
+import Element.DoiToaDo_3D; 
 
 /**
  *
@@ -13,7 +13,7 @@ public class DrawCube{
 
     public static Point point1, point2, point3, point4, point5, point6, point7, point8;
     public static Dthang dt1, dt2, dt3, dt4, dt5, dt6, dt7, dt8, dt9, dt10, dt11, dt12;
-    DoiToaDo doitoado = new DoiToaDo();
+    DoiToaDo_3D doitoado = new DoiToaDo_3D();
     double HESO = Math.sqrt(2)/2;
     public  DrawCube(Color choosecolor, int X, int Y, int Z, int L, int W, int H){
 
